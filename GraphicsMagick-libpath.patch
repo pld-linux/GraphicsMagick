@@ -1,0 +1,28 @@
+--- GraphicsMagick-1.1.7/configure.ac.orig	2005-03-19 01:35:06.000000000 +0100
++++ GraphicsMagick-1.1.7/configure.ac	2006-01-28 19:25:30.383390250 +0100
+@@ -2581,7 +2581,7 @@
+ # Determine path to pick up GraphicsMagick library from for use with building PerlMagick
+ MAGICKLIBDIR="${LIB_DIR}"
+ MAGICKLIB="-L${MAGICKLIBDIR} -lGraphicsMagick"
+-if test $with_perl_static = 'yes'
++if test $with_perl_static = 'yes' -o $with_perl_dynamic = 'yes'
+ then
+   # Find out where libtool hides its uninstalled libraries (as libtool_objdir)
+   libtool_objdir=$objdir
+--- GraphicsMagick-1.1.7/Makefile.am.orig	2004-09-12 19:25:25.000000000 +0200
++++ GraphicsMagick-1.1.7/Makefile.am	2004-09-19 12:25:10.924398496 +0200
+@@ -45,11 +45,12 @@
+ 	cd $(PERLMAGICK) && @PERL@ Makefile.PL $(PERL_MAKE_OPTIONS)
+ 
+ install-exec-perl: $(PERLMAKEFILE)
+-	( cd $(PERLMAGICK) && $(MAKE) CC='@CC@' && \
++	( cd $(PERLMAGICK) && \
+ 	$(MAKE) CC='@CC@' install && \
+ 	$(MAKE) clean && rm -f  Makefile.old )
+ 
+-all-perl:
++all-perl: $(PERLMAKEFILE) magick/libGraphicsMagick.la
++	cd $(PERLMAGICK) && $(MAKE) CC='@CC@'
+ 
+ uninstall-exec-perl: $(PERLMAKEFILE)
+ 	echo "Uninstall not supported for PerlMagick"
