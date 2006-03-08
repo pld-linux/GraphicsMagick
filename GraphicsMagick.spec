@@ -18,17 +18,16 @@ Summary(tr):	X altýnda resim gösterme, çevirme ve deðiþiklik yapma
 Summary(uk):	ðÅÒÅÇÌÑÄ, ËÏÎ×ÅÒÔÕ×ÁÎÎÑ ÔÁ ÏÂÒÏÂËÁ ÚÏÂÒÁÖÅÎØ Ð¦Ä X Window
 Name:		GraphicsMagick
 Version:	1.1.7
-Release:	1
+Release:	2
 License:	Apache-like
 Group:		X11/Applications/Graphics
 Source0:	ftp://ftp.graphicsmagick.org/pub/GraphicsMagick/%{name}-%{version}.tar.bz2
 # Source0-md5:	f75d830ca623bf10385b3ad62c48437a
 Patch0:		%{name}-libpath.patch
 Patch1:		%{name}-system-libltdl.patch
+Patch2:		%{name}-link.patch
 URL:		http://www.graphicsmagick.org/
-BuildRequires:	XFree86-DPS-devel
-BuildRequires:	XFree86-devel
-BuildRequires:	autoconf >= 2.59
+BuildRequires:	autoconf >= 2.59-9
 BuildRequires:	automake >= 1:1.8
 BuildRequires:	bzip2-devel >= 1.0.1
 BuildRequires:	expat-devel >= 1.95.7
@@ -48,9 +47,11 @@ BuildRequires:	libwmf-devel >= 2:0.2.2
 BuildRequires:	libxml2-devel >= 2.0
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
+BuildRequires:	xorg-lib-libXext-devel
 # only checked for, but only supplied scripts/txt2html is used
 #BuildRequires:	txt2html
 Requires:	%{name}-libs = %{version}-%{release}
+Obsoletes:	GraphicsMagick-coder-dps
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # we don't want "-s" here, because it would be added to `GraphicsMagick*-config --ldflags`
@@ -134,11 +135,11 @@ Summary(ru):	èÅÄÅÒÙ É ÂÉÂÌÉÏÔÅËÉ ÄÌÑ ÐÒÏÇÒÁÍÍÉÒÏ×ÁÎÉÑ Ó GraphicsMagick
 Summary(uk):	èÅÄÅÒÉ ÔÁ Â¦ÂÌ¦ÏÔÅËÉ ÄÌÑ ÐÒÏÇÒÁÍÕ×ÁÎÎÑ Ú GraphicsMagick
 Group:		X11/Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
-Requires:	XFree86-devel
 Requires:	bzip2-devel
 Requires:	freetype-devel
 Requires:	lcms-devel
 Requires:	libltdl-devel
+Requires:	xorg-lib-libXext-devel
 Requires:	zlib-devel
 
 %description devel
@@ -223,20 +224,6 @@ Coder module for GraphViz DOT files.
 
 %description coder-dot -l pl
 Modu³ kodera dla plików GraphViz DOT.
-
-%package coder-dps
-Summary:	Coder module for Postscript files using DPS extension
-Summary(pl):	Modu³ kodera dla plików Postscript u¿ywaj±cy rozszerzenia DPS
-Group:		X11/Applications/Graphics
-Requires:	%{name} = %{version}-%{release}
-
-%description coder-dps
-Coder module for Postcript files using DPS (Display PostScript)
-extension.
-
-%description coder-dps -l pl
-Modu³ kodera dla plików Postscript u¿ywaj±cy rozszerzenia DPS (Display
-PostScript).
 
 %package coder-fpx
 Summary:	Coder module for FlashPIX (FPX) files
@@ -552,6 +539,7 @@ Dokumentacja do GraphicsMagick.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 find PerlMagick scripts www -type f -exec perl -pi -e 's=!/usr/local/bin/perl=!/usr/bin/perl=' {} \;
 
@@ -567,6 +555,7 @@ echo -e '\nAC_DEFUN([AC_LIBTOOL_TAGS],[])' >> acinclude.m4
 	--enable-fast-install \
 	--enable-shared \
 	--disable-ltdl-install \
+	--without-dps \
 	--with%{!?with_fpx:out}-fpx \
 	--with%{!?with_gs:out}-gslib \
 	--with%{!?with_jasper:out}-jp2 \
@@ -799,12 +788,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %{_libdir}/libGraphicsMagick.a
 %{_libdir}/libGraphicsMagickWand.a
-
-%files coder-dps
-%defattr(644,root,root,755)
-# R: XFree86-DPS (libdps.so)
-%attr(755,root,root) %{modulesdir}/coders/dps.so
-%{modulesdir}/coders/dps.la
 
 %if %{with fpx}
 %files coder-fpx
