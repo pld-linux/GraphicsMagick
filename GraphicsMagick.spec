@@ -7,6 +7,8 @@
 #
 %include	/usr/lib/rpm/macros.perl
 %define		QuantumDepth	16
+%define	pdir	Graphics
+%define	pnam	Magick
 Summary:	Image display, conversion, and manipulation under X
 Summary(de):	Darstellen, Konvertieren und Bearbeiten von Grafiken unter X
 Summary(es):	Exhibidor, convertidor y manipulador de imágenes bajo X
