@@ -581,6 +581,10 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-perl-%{version}
 
 install PerlMagick/demo/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-perl-%{version}
 rm -f $RPM_BUILD_ROOT%{modulesdir}/{coders,filters}/*.a
+rm -f $RPM_BUILD_ROOT%{_datadir}/%{name}-%{version}/Copyright.txt
+rm -f $RPM_BUILD_ROOT%{perl_vendorarch}/auto/Graphics/Magick/.packlist
+rm -f $RPM_BUILD_ROOT%{perl_archlib}/perllocal.pod
+rm -f $RPM_BUILD_ROOT%{modulesdir}/coders/dps.*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
