@@ -57,7 +57,7 @@ Obsoletes:	GraphicsMagick-coder-dps
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # we don't want "-s" here, because it would be added to `GraphicsMagick*-config --ldflags`
-%define		rpmldflags	%{nil}
+%define		filterout_ld	(-Wl,)?-s (-Wl,)?--strip-all
 %define		modulesdir	%{_libdir}/GraphicsMagick-%{version}/modules-Q%{QuantumDepth}
 
 %description
