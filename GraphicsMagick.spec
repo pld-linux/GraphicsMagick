@@ -49,6 +49,7 @@ BuildRequires:	libwmf-devel >= 2:0.2.2
 BuildRequires:	libxml2-devel >= 2.0
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
+BuildRequires:	rpmbuild(macros) >= 1.315
 BuildRequires:	xorg-lib-libXext-devel
 # only checked for, but only supplied scripts/txt2html is used
 #BuildRequires:	txt2html
