@@ -62,10 +62,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		modulesdir	%{_libdir}/GraphicsMagick-%{version}/modules-Q%{QuantumDepth}
 
 %description
-GraphicsMagick is an image display, conversion, and manipulation tool. It
-runs under X Window. It is very powerful in terms of it's ability to
-allow the user to edit images. It can handle many different formats as
-well.
+GraphicsMagick is an image display, conversion, and manipulation tool.
+It runs under X Window. It is very powerful in terms of it's ability
+to allow the user to edit images. It can handle many different formats
+as well.
 
 %description -l de
 GraphicsMagick ist ein Tool zur Bildanzeige, -konvertierung und
@@ -80,17 +80,17 @@ permite editar imágenes, pudiendo manipular varios formatos
 diferentes.
 
 %description -l fr
-GraphicsMagick est un outil d'affichage, de conversion et de manipulation
-d'images. Il tourne sous X Window et est très puissant en termes de
-capacité d'édition des images. Il peut aussi gérer de nombreux formats
-différents.
+GraphicsMagick est un outil d'affichage, de conversion et de
+manipulation d'images. Il tourne sous X Window et est très puissant en
+termes de capacité d'édition des images. Il peut aussi gérer de
+nombreux formats différents.
 
 %description -l pl
-GraphicsMagick jest narzêdziem do manipulacji, konwersji i wy¶wietlania.
-W sk³ad pakietu wchodz± zarówno narzêdzia X Window jak i do u¿ywania z
-linii poleceñ umo¿liwiaj±ce edycjê plików graficznych. Narzêdzia z
-pakietu GraphicsMagick potrafi± obs³u¿yæ wiele ró¿nych formatów
-graficznych.
+GraphicsMagick jest narzêdziem do manipulacji, konwersji i
+wy¶wietlania. W sk³ad pakietu wchodz± zarówno narzêdzia X Window jak i
+do u¿ywania z linii poleceñ umo¿liwiaj±ce edycjê plików graficznych.
+Narzêdzia z pakietu GraphicsMagick potrafi± obs³u¿yæ wiele ró¿nych
+formatów graficznych.
 
 %description -l pt_BR
 GraphicsMagick é uma ferramenta para manipular, converter e exibir
@@ -98,10 +98,10 @@ imagens, que funciona sob o X Window. É uma ferramenta poderosa que
 permite editar imagens, podendo tratar vários formatos diferentes.
 
 %description -l ru
-GraphicsMagick - ÜÔÏ ÕÔÉÌÉÔÁ ÄÌÑ ÐÒÏÓÍÏÔÒÁ, ËÏÎ×ÅÒÔÉÒÏ×ÁÎÉÑ É ÏÂÒÁÂÏÔËÉ
-ÉÚÏÂÒÁÖÅÎÉÊ. ïÎÁ ÒÁÂÏÔÁÅÔ ÐÏÄ X Window. GraphicsMagick ÐÒÅÄÏÓÔÁ×ÌÑÅÔ
-ÐÏÌØÚÏ×ÁÔÅÌÀ ÛÉÒÏËÉÅ ×ÏÚÍÏÖÎÏÓÔÉ ÐÏ ÏÂÒÁÂÏÔËÅ ÉÚÏÂÒÁÖÅÎÉÊ × ÓÁÍÙÈ
-ÒÁÚÎÏÏÂÒÁÚÎÙÈ ÆÏÒÍÁÔÁÈ.
+GraphicsMagick - ÜÔÏ ÕÔÉÌÉÔÁ ÄÌÑ ÐÒÏÓÍÏÔÒÁ, ËÏÎ×ÅÒÔÉÒÏ×ÁÎÉÑ É
+ÏÂÒÁÂÏÔËÉ ÉÚÏÂÒÁÖÅÎÉÊ. ïÎÁ ÒÁÂÏÔÁÅÔ ÐÏÄ X Window. GraphicsMagick
+ÐÒÅÄÏÓÔÁ×ÌÑÅÔ ÐÏÌØÚÏ×ÁÔÅÌÀ ÛÉÒÏËÉÅ ×ÏÚÍÏÖÎÏÓÔÉ ÐÏ ÏÂÒÁÂÏÔËÅ
+ÉÚÏÂÒÁÖÅÎÉÊ × ÓÁÍÙÈ ÒÁÚÎÏÏÂÒÁÚÎÙÈ ÆÏÒÍÁÔÁÈ.
 
 %description -l tr
 GraphicsMagick bir resim gösterme, çevirme ve deðiþiklik yapma
@@ -146,8 +146,8 @@ Requires:	xorg-lib-libXext-devel
 Requires:	zlib-devel
 
 %description devel
-This is the GraphicsMagick development package. It includes header files
-for use in developing your own applications that make use of the
+This is the GraphicsMagick development package. It includes header
+files for use in developing your own applications that make use of the
 GraphicsMagick code and/or APIs.
 
 %description devel -l de
@@ -156,9 +156,10 @@ zum Entwickeln von Anwendungen, die GraphicsMagick-Code und/oder -APIs
 nutzen.
 
 %description devel -l es
-Este es el paquete de desarrollo GraphicsMagick. Incluye las bibliotecas
-y los archivos de inclusión para el desarrollo de sus propias
-aplicaciones que hacen uso del código GraphicsMagick y/el APIs.
+Este es el paquete de desarrollo GraphicsMagick. Incluye las
+bibliotecas y los archivos de inclusión para el desarrollo de sus
+propias aplicaciones que hacen uso del código GraphicsMagick y/el
+APIs.
 
 %description devel -l fr
 Paquetage de développement GraphicsMagick. Contient les bibliothèques
@@ -167,19 +168,19 @@ utilisant le code d'GraphicsMagick et/ou ses APIs.
 
 %description devel -l pl
 Pakiet ten zawieraja pliki potrzebne przy kompilowaniu programów
-wykorzystuj±cych blibliotekê GraphicsMagick takie jak pliki nag³ówkowe i
-dokumentacjê niezbêdn± przy pisaniu w³asnych programów z
+wykorzystuj±cych blibliotekê GraphicsMagick takie jak pliki nag³ówkowe
+i dokumentacjê niezbêdn± przy pisaniu w³asnych programów z
 wykorzystaniem API jakie udostêpnia GraphicsMagick.
 
 %description devel -l pt_BR
-Este é o pacote de desenvolvimento GraphicsMagick. Inclui as bibliotecas
-e os arquivos de inclusão para o desenvolvimento de suas próprias
-aplicações que fazem uso do código GraphicsMagick e/ou APIs.
+Este é o pacote de desenvolvimento GraphicsMagick. Inclui as
+bibliotecas e os arquivos de inclusão para o desenvolvimento de suas
+próprias aplicações que fazem uso do código GraphicsMagick e/ou APIs.
 
 %description devel -l ru
-üÔÏ ÐÁËÅÔ ÒÁÚÒÁÂÏÔÞÉËÁ ÄÌÑ ÐÒÏÇÒÁÍÍÉÒÏ×ÁÎÉÑ Ó GraphicsMagick. ïÎ ×ËÌÀÞÁÅÔ
-ÈÅÄÅÒÙ É ÂÉÂÌÉÏÔÅËÉ ÄÌÑ ÉÓÐÏÌØÚÏ×ÁÎÉÑ × ÐÒÏÇÒÁÍÍÁÈ, ËÏÔÏÒÙÅ ÉÓÐÏÌØÚÕÀÔ
-ËÏÄ ÉÌÉ API GraphicsMagick.
+üÔÏ ÐÁËÅÔ ÒÁÚÒÁÂÏÔÞÉËÁ ÄÌÑ ÐÒÏÇÒÁÍÍÉÒÏ×ÁÎÉÑ Ó GraphicsMagick. ïÎ
+×ËÌÀÞÁÅÔ ÈÅÄÅÒÙ É ÂÉÂÌÉÏÔÅËÉ ÄÌÑ ÉÓÐÏÌØÚÏ×ÁÎÉÑ × ÐÒÏÇÒÁÍÍÁÈ, ËÏÔÏÒÙÅ
+ÉÓÐÏÌØÚÕÀÔ ËÏÄ ÉÌÉ API GraphicsMagick.
 
 %description devel -l tr
 Bu paket, GraphicsMagick uygulama arayüzünü kullanan programlar
@@ -400,13 +401,13 @@ Requires:	%{name}-libs = %{version}-%{release}
 This package contains the Magick++ library, a C++ binding to the
 GraphicsMagick graphics manipulation library.
 
-Install GraphicsMagick-c++ if you want to use any applications that use
-Magick++.
+Install GraphicsMagick-c++ if you want to use any applications that
+use Magick++.
 
 %description c++ -l pl
 Pakiet zawiera bibliotekê Magick++ - interfejs w C++ do biblioteki
-GraphicsMagick. Jest potrzebny do uruchamiania programów korzystaj±cych z
-Magick++.
+GraphicsMagick. Jest potrzebny do uruchamiania programów
+korzystaj±cych z Magick++.
 
 %description c++ -l pt_BR
 Bibliotecas dinâmicas C++ do GraphicsMagick.
@@ -435,19 +436,21 @@ Requires:	libstdc++-devel
 
 %description c++-devel
 GraphicsMagick-c++-devel contains header files you'll need to develop
-GraphicsMagick applications using the Magick++ C++ bindings. GraphicsMagick
-is an image manipulation program.
+GraphicsMagick applications using the Magick++ C++ bindings.
+GraphicsMagick is an image manipulation program.
 
 If you want to create applications that will use Magick++ code or
-APIs, you'll need to install GraphicsMagick-c++-devel, GraphicsMagick-devel
-and GraphicsMagick. You don't need to install it if you just want to use
-GraphicsMagick, or if you want to develop/compile applications using the
-GraphicsMagick C interface, however.
+APIs, you'll need to install GraphicsMagick-c++-devel,
+GraphicsMagick-devel and GraphicsMagick. You don't need to install it
+if you just want to use GraphicsMagick, or if you want to
+develop/compile applications using the GraphicsMagick C interface,
+however.
 
 %description c++-devel -l es
-Este es el paquete de desarrollo GraphicsMagick. Incluye las bibliotecas
-estáticas y los archivos de inclusión para el desarrollo de sus
-propias aplicaciones que hacen uso del código GraphicsMagick y/el APIs.
+Este es el paquete de desarrollo GraphicsMagick. Incluye las
+bibliotecas estáticas y los archivos de inclusión para el desarrollo
+de sus propias aplicaciones que hacen uso del código GraphicsMagick
+y/el APIs.
 
 %description c++-devel -l pl
 Pakiet zawiera pliki nag³ówkowe potrzebne do kompilowania programów
@@ -460,9 +463,9 @@ próprias aplicações C++ que fazem uso do código GraphicsMagick e/ou
 APIs.
 
 %description c++-devel -l ru
-üÔÏ ÐÁËÅÔ ÒÁÚÒÁÂÏÔÞÉËÁ ÄÌÑ ÐÒÏÇÒÁÍÍÉÒÏ×ÁÎÉÑ Ó GraphicsMagick. ïÎ ×ËÌÀÞÁÅÔ
-ÈÅÄÅÒÙ É ÂÉÂÌÉÏÔÅËÉ ÄÌÑ ÉÓÐÏÌØÚÏ×ÁÎÉÑ × ÐÒÏÇÒÁÍÍÁÈ, ËÏÔÏÒÙÅ ÉÓÐÏÌØÚÕÀÔ
-ËÏÄ ÉÌÉ API Magick++ (C++ ÉÎÔÅÒÆÅÊÓ ÄÌÑ GraphicsMagick'Á).
+üÔÏ ÐÁËÅÔ ÒÁÚÒÁÂÏÔÞÉËÁ ÄÌÑ ÐÒÏÇÒÁÍÍÉÒÏ×ÁÎÉÑ Ó GraphicsMagick. ïÎ
+×ËÌÀÞÁÅÔ ÈÅÄÅÒÙ É ÂÉÂÌÉÏÔÅËÉ ÄÌÑ ÉÓÐÏÌØÚÏ×ÁÎÉÑ × ÐÒÏÇÒÁÍÍÁÈ, ËÏÔÏÒÙÅ
+ÉÓÐÏÌØÚÕÀÔ ËÏÄ ÉÌÉ API Magick++ (C++ ÉÎÔÅÒÆÅÊÓ ÄÌÑ GraphicsMagick'Á).
 
 %description c++-devel -l uk
 ãÅ ÐÁËÅÔ ÄÌÑ ÐÒÏÇÒÁÍÕ×ÁÎÎÑ Ú GraphicsMagick. ÷¦Î Í¦ÓÔÉÔØ ÈÅÄÅÒÉ ÔÁ
@@ -512,12 +515,12 @@ support files for access to GraphicsMagick library from perl without
 unuseful forking or such.
 
 %description perl -l pl
-Biblioteki i modu³y umo¿liwiaj±ce korzystanie z GraphicsMagick z poziomu
-Perla.
+Biblioteki i modu³y umo¿liwiaj±ce korzystanie z GraphicsMagick z
+poziomu Perla.
 
 %description perl -l pt_BR
-Este pacote fornece um módulo perl para acessar funções do GraphicsMagick
-em scripts Perl.
+Este pacote fornece um módulo perl para acessar funções do
+GraphicsMagick em scripts Perl.
 
 %description perl -l ru
 üÔÏ ÐÁËÅÔ GraphicsMagick ÄÌÑ ÐÏÄÄÅÒÖËÉ perl. ïÎ ×ËÌÀÞÁÅÔ ÍÏÄÕÌÉ perl É
@@ -544,7 +547,7 @@ Dokumentacja do GraphicsMagick.
 %patch1 -p1
 %patch2 -p1
 
-find PerlMagick scripts www -type f -exec perl -pi -e 's=!/usr/local/bin/perl=!/usr/bin/perl=' {} \;
+find PerlMagick scripts www -type f -exec perl -pi -e 's=!%{_prefix}/local/bin/perl=!%{__perl}=' {} \;
 
 # don't require libtool 1.6
 echo -e '\nAC_DEFUN([AC_LIBTOOL_TAGS],[])' >> acinclude.m4
@@ -580,7 +583,7 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-perl-%{version}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
-	pkgdocdir=%{_defaultdocdir}/%{name}-devel-%{version}
+	pkgdocdir=%{_docdir}/%{name}-devel-%{version}
 
 install PerlMagick/demo/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-perl-%{version}
 rm -f $RPM_BUILD_ROOT%{modulesdir}/{coders,filters}/*.a
@@ -773,7 +776,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%doc %{_defaultdocdir}/%{name}-devel-%{version}
+%doc %{_docdir}/%{name}-devel-%{version}
 %attr(755,root,root) %{_bindir}/GraphicsMagick-config
 %attr(755,root,root) %{_bindir}/GraphicsMagickWand-config
 %attr(755,root,root) %{_libdir}/libGraphicsMagick.so
