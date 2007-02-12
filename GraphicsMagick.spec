@@ -10,14 +10,14 @@
 %define	pdir	Graphics
 %define	pnam	Magick
 Summary:	Image display, conversion, and manipulation under X
-Summary(de):	Darstellen, Konvertieren und Bearbeiten von Grafiken unter X
-Summary(es):	Exhibidor, convertidor y manipulador de imАgenes bajo X
-Summary(fr):	Visualisation, conversion, et manipulation d'images sous X
-Summary(pl):	NarzЙdzie do wy╤wietlania, konwersji i manipulacji grafikami
-Summary(pt_BR):	Exibidor, conversor e manipulador de imagens sob X
-Summary(ru):	Просмотр, конвертирование, обработка изображений под X Window
-Summary(tr):	X altЩnda resim gЖsterme, Гevirme ve deПiЧiklik yapma
-Summary(uk):	Перегляд, конвертування та обробка зображень п╕д X Window
+Summary(de.UTF-8):   Darstellen, Konvertieren und Bearbeiten von Grafiken unter X
+Summary(es.UTF-8):   Exhibidor, convertidor y manipulador de imц║genes bajo X
+Summary(fr.UTF-8):   Visualisation, conversion, et manipulation d'images sous X
+Summary(pl.UTF-8):   Narzд≥dzie do wyе⌡wietlania, konwersji i manipulacji grafikami
+Summary(pt_BR.UTF-8):   Exibidor, conversor e manipulador de imagens sob X
+Summary(ru.UTF-8):   п÷я─п╬я│п╪п╬я┌я─, п╨п╬п╫п╡п╣я─я┌п╦я─п╬п╡п╟п╫п╦п╣, п╬п╠я─п╟п╠п╬я┌п╨п╟ п╦п╥п╬п╠я─п╟п╤п╣п╫п╦п╧ п©п╬п╢ X Window
+Summary(tr.UTF-8):   X altд╠nda resim gц╤sterme, ц╖evirme ve deд÷iе÷iklik yapma
+Summary(uk.UTF-8):   п÷п╣я─п╣пЁп╩я▐п╢, п╨п╬п╫п╡п╣я─я┌я┐п╡п╟п╫п╫я▐ я┌п╟ п╬п╠я─п╬п╠п╨п╟ п╥п╬п╠я─п╟п╤п╣п╫я▄ п©я√п╢ X Window
 Name:		GraphicsMagick
 Version:	1.1.7
 Release:	2
@@ -67,75 +67,75 @@ It runs under X Window. It is very powerful in terms of it's ability
 to allow the user to edit images. It can handle many different formats
 as well.
 
-%description -l de
+%description -l de.UTF-8
 GraphicsMagick ist ein Tool zur Bildanzeige, -konvertierung und
-manipulation, -das unter X-Window lДuft. Es ist enorm leitungsfДhig in
+manipulation, -das unter X-Window lц╓uft. Es ist enorm leitungsfц╓hig in
 Bezug auf die Grafikmanipulationsfunktionen, die es dem Anwender
-bietet, und auf die Vielfalt der unterstЭtzten Formate.
+bietet, und auf die Vielfalt der unterstц╪tzten Formate.
 
-%description -l es
+%description -l es.UTF-8
 GraphicsMagick es una herramienta para manipular, convertir y exhibir
-imАgenes, que funciona bajo X Window. Es una herramienta potente que
-permite editar imАgenes, pudiendo manipular varios formatos
+imц║genes, que funciona bajo X Window. Es una herramienta potente que
+permite editar imц║genes, pudiendo manipular varios formatos
 diferentes.
 
-%description -l fr
+%description -l fr.UTF-8
 GraphicsMagick est un outil d'affichage, de conversion et de
-manipulation d'images. Il tourne sous X Window et est trХs puissant en
-termes de capacitИ d'Иdition des images. Il peut aussi gИrer de
-nombreux formats diffИrents.
+manipulation d'images. Il tourne sous X Window et est trц╗s puissant en
+termes de capacitц╘ d'ц╘dition des images. Il peut aussi gц╘rer de
+nombreux formats diffц╘rents.
 
-%description -l pl
-GraphicsMagick jest narzЙdziem do manipulacji, konwersji i
-wy╤wietlania. W skЁad pakietu wchodz╠ zarСwno narzЙdzia X Window jak i
-do u©ywania z linii poleceЯ umo©liwiaj╠ce edycjЙ plikСw graficznych.
-NarzЙdzia z pakietu GraphicsMagick potrafi╠ obsЁu©yФ wiele rС©nych
-formatСw graficznych.
+%description -l pl.UTF-8
+GraphicsMagick jest narzд≥dziem do manipulacji, konwersji i
+wyе⌡wietlania. W skе┌ad pakietu wchodzд┘ zarцЁwno narzд≥dzia X Window jak i
+do uе╪ywania z linii poleceе└ umoе╪liwiajд┘ce edycjд≥ plikцЁw graficznych.
+Narzд≥dzia z pakietu GraphicsMagick potrafiд┘ obsе┌uе╪yд┤ wiele rцЁе╪nych
+formatцЁw graficznych.
 
-%description -l pt_BR
-GraphicsMagick И uma ferramenta para manipular, converter e exibir
-imagens, que funciona sob o X Window. и uma ferramenta poderosa que
-permite editar imagens, podendo tratar vАrios formatos diferentes.
+%description -l pt_BR.UTF-8
+GraphicsMagick ц╘ uma ferramenta para manipular, converter e exibir
+imagens, que funciona sob o X Window. ц┴ uma ferramenta poderosa que
+permite editar imagens, podendo tratar vц║rios formatos diferentes.
 
-%description -l ru
-GraphicsMagick - это утилита для просмотра, конвертирования и
-обработки изображений. Она работает под X Window. GraphicsMagick
-предоставляет пользователю широкие возможности по обработке
-изображений в самых разнообразных форматах.
+%description -l ru.UTF-8
+GraphicsMagick - я█я┌п╬ я┐я┌п╦п╩п╦я┌п╟ п╢п╩я▐ п©я─п╬я│п╪п╬я┌я─п╟, п╨п╬п╫п╡п╣я─я┌п╦я─п╬п╡п╟п╫п╦я▐ п╦
+п╬п╠я─п╟п╠п╬я┌п╨п╦ п╦п╥п╬п╠я─п╟п╤п╣п╫п╦п╧. п·п╫п╟ я─п╟п╠п╬я┌п╟п╣я┌ п©п╬п╢ X Window. GraphicsMagick
+п©я─п╣п╢п╬я│я┌п╟п╡п╩я▐п╣я┌ п©п╬п╩я▄п╥п╬п╡п╟я┌п╣п╩я▌ я┬п╦я─п╬п╨п╦п╣ п╡п╬п╥п╪п╬п╤п╫п╬я│я┌п╦ п©п╬ п╬п╠я─п╟п╠п╬я┌п╨п╣
+п╦п╥п╬п╠я─п╟п╤п╣п╫п╦п╧ п╡ я│п╟п╪я▀я┘ я─п╟п╥п╫п╬п╬п╠я─п╟п╥п╫я▀я┘ я└п╬я─п╪п╟я┌п╟я┘.
 
-%description -l tr
-GraphicsMagick bir resim gЖsterme, Гevirme ve deПiЧiklik yapma
-programЩdЩr. X Window pencereleme sistemi altЩnda ГalЩЧЩr. KullanЩcЩya
-resimler Эzerinde deПiЧiklik yapma aГЩsЩndan pek Гok olanak sunar. Bir
-Гok resim biГimini rahatlЩkla kullanabilir.
+%description -l tr.UTF-8
+GraphicsMagick bir resim gц╤sterme, ц╖evirme ve deд÷iе÷iklik yapma
+programд╠dд╠r. X Window pencereleme sistemi altд╠nda ц╖alд╠е÷д╠r. Kullanд╠cд╠ya
+resimler ц╪zerinde deд÷iе÷iklik yapma aц╖д╠sд╠ndan pek ц╖ok olanak sunar. Bir
+ц╖ok resim biц╖imini rahatlд╠kla kullanabilir.
 
-%description -l uk
-GraphicsMagick - це утил╕та для перегляду, конвертування та обробки
-зображень. Вона працю╓ п╕д X Window. GraphicsMagick да╓ користувачу
-широк╕ можливост╕ по обробц╕ зображень в р╕зноман╕тних форматах.
+%description -l uk.UTF-8
+GraphicsMagick - я├п╣ я┐я┌п╦п╩я√я┌п╟ п╢п╩я▐ п©п╣я─п╣пЁп╩я▐п╢я┐, п╨п╬п╫п╡п╣я─я┌я┐п╡п╟п╫п╫я▐ я┌п╟ п╬п╠я─п╬п╠п╨п╦
+п╥п╬п╠я─п╟п╤п╣п╫я▄. п▓п╬п╫п╟ п©я─п╟я├я▌я■ п©я√п╢ X Window. GraphicsMagick п╢п╟я■ п╨п╬я─п╦я│я┌я┐п╡п╟я┤я┐
+я┬п╦я─п╬п╨я√ п╪п╬п╤п╩п╦п╡п╬я│я┌я√ п©п╬ п╬п╠я─п╬п╠я├я√ п╥п╬п╠я─п╟п╤п╣п╫я▄ п╡ я─я√п╥п╫п╬п╪п╟п╫я√я┌п╫п╦я┘ я└п╬я─п╪п╟я┌п╟я┘.
 
 %package libs
 Summary:	GraphicsMagick libraries
-Summary(pl):	Biblioteki GraphicsMagick
-Summary(pt_BR):	Bibliotecas dinБmicas do GraphicsMagick
+Summary(pl.UTF-8):   Biblioteki GraphicsMagick
+Summary(pt_BR.UTF-8):   Bibliotecas dinц╒micas do GraphicsMagick
 Group:		X11/Libraries
 
 %description libs
 GraphicsMagick libraries.
 
-%description libs -l pl
+%description libs -l pl.UTF-8
 Biblioteki GraphicsMagick.
 
-%description libs -l pt_BR
-Bibliotecas dinБmicas do GraphicsMagick.
+%description libs -l pt_BR.UTF-8
+Bibliotecas dinц╒micas do GraphicsMagick.
 
 %package devel
 Summary:	Libraries and header files for GraphicsMagick development
-Summary(es):	Biblioteca estАtica y archivos de inclusiСn para desarrollo con libGraphicsMagick
-Summary(pl):	Biblioteki i pliki nagЁСwkowe dla GraphicsMagick
-Summary(pt_BR):	Biblioteca e arquivos de inclusЦo para desenvolvimento com libGraphicsMagick
-Summary(ru):	Хедеры и библиотеки для программирования с GraphicsMagick
-Summary(uk):	Хедери та б╕бл╕отеки для програмування з GraphicsMagick
+Summary(es.UTF-8):   Biblioteca estц║tica y archivos de inclusiцЁn para desarrollo con libGraphicsMagick
+Summary(pl.UTF-8):   Biblioteki i pliki nagе┌цЁwkowe dla GraphicsMagick
+Summary(pt_BR.UTF-8):   Biblioteca e arquivos de inclusцёo para desenvolvimento com libGraphicsMagick
+Summary(ru.UTF-8):   п╔п╣п╢п╣я─я▀ п╦ п╠п╦п╠п╩п╦п╬я┌п╣п╨п╦ п╢п╩я▐ п©я─п╬пЁя─п╟п╪п╪п╦я─п╬п╡п╟п╫п╦я▐ я│ GraphicsMagick
+Summary(uk.UTF-8):   п╔п╣п╢п╣я─п╦ я┌п╟ п╠я√п╠п╩я√п╬я┌п╣п╨п╦ п╢п╩я▐ п©я─п╬пЁя─п╟п╪я┐п╡п╟п╫п╫я▐ п╥ GraphicsMagick
 Group:		X11/Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
 Requires:	bzip2-devel
@@ -150,149 +150,149 @@ This is the GraphicsMagick development package. It includes header
 files for use in developing your own applications that make use of the
 GraphicsMagick code and/or APIs.
 
-%description devel -l de
-Dies ist das GraphicsMagick-Entwicklerpaket. Es enthДlt Header-Dateien
+%description devel -l de.UTF-8
+Dies ist das GraphicsMagick-Entwicklerpaket. Es enthц╓lt Header-Dateien
 zum Entwickeln von Anwendungen, die GraphicsMagick-Code und/oder -APIs
 nutzen.
 
-%description devel -l es
+%description devel -l es.UTF-8
 Este es el paquete de desarrollo GraphicsMagick. Incluye las
-bibliotecas y los archivos de inclusiСn para el desarrollo de sus
-propias aplicaciones que hacen uso del cСdigo GraphicsMagick y/el
+bibliotecas y los archivos de inclusiцЁn para el desarrollo de sus
+propias aplicaciones que hacen uso del cцЁdigo GraphicsMagick y/el
 APIs.
 
-%description devel -l fr
-Paquetage de dИveloppement GraphicsMagick. Contient les bibliothХques
-statiques et les en-tЙtes utilisИs pour crИer vos propres applications
+%description devel -l fr.UTF-8
+Paquetage de dц╘veloppement GraphicsMagick. Contient les bibliothц╗ques
+statiques et les en-tц╙tes utilisц╘s pour crц╘er vos propres applications
 utilisant le code d'GraphicsMagick et/ou ses APIs.
 
-%description devel -l pl
-Pakiet ten zawieraja pliki potrzebne przy kompilowaniu programСw
-wykorzystuj╠cych blibliotekЙ GraphicsMagick takie jak pliki nagЁСwkowe
-i dokumentacjЙ niezbЙdn╠ przy pisaniu wЁasnych programСw z
-wykorzystaniem API jakie udostЙpnia GraphicsMagick.
+%description devel -l pl.UTF-8
+Pakiet ten zawieraja pliki potrzebne przy kompilowaniu programцЁw
+wykorzystujд┘cych blibliotekд≥ GraphicsMagick takie jak pliki nagе┌цЁwkowe
+i dokumentacjд≥ niezbд≥dnд┘ przy pisaniu wе┌asnych programцЁw z
+wykorzystaniem API jakie udostд≥pnia GraphicsMagick.
 
-%description devel -l pt_BR
-Este И o pacote de desenvolvimento GraphicsMagick. Inclui as
-bibliotecas e os arquivos de inclusЦo para o desenvolvimento de suas
-prСprias aplicaГУes que fazem uso do cСdigo GraphicsMagick e/ou APIs.
+%description devel -l pt_BR.UTF-8
+Este ц╘ o pacote de desenvolvimento GraphicsMagick. Inclui as
+bibliotecas e os arquivos de inclusцёo para o desenvolvimento de suas
+prцЁprias aplicaц╖ц╣es que fazem uso do cцЁdigo GraphicsMagick e/ou APIs.
 
-%description devel -l ru
-Это пакет разработчика для программирования с GraphicsMagick. Он
-включает хедеры и библиотеки для использования в программах, которые
-используют код или API GraphicsMagick.
+%description devel -l ru.UTF-8
+п╜я┌п╬ п©п╟п╨п╣я┌ я─п╟п╥я─п╟п╠п╬я┌я┤п╦п╨п╟ п╢п╩я▐ п©я─п╬пЁя─п╟п╪п╪п╦я─п╬п╡п╟п╫п╦я▐ я│ GraphicsMagick. п·п╫
+п╡п╨п╩я▌я┤п╟п╣я┌ я┘п╣п╢п╣я─я▀ п╦ п╠п╦п╠п╩п╦п╬я┌п╣п╨п╦ п╢п╩я▐ п╦я│п©п╬п╩я▄п╥п╬п╡п╟п╫п╦я▐ п╡ п©я─п╬пЁя─п╟п╪п╪п╟я┘, п╨п╬я┌п╬я─я▀п╣
+п╦я│п©п╬п╩я▄п╥я┐я▌я┌ п╨п╬п╢ п╦п╩п╦ API GraphicsMagick.
 
-%description devel -l tr
-Bu paket, GraphicsMagick uygulama arayЭzЭnЭ kullanan programlar
-geliЧtirmek iГin gereken baЧlЩk dosyalarЩnЩ ve kitaplЩklarЩ iГerir.
+%description devel -l tr.UTF-8
+Bu paket, GraphicsMagick uygulama arayц╪zц╪nц╪ kullanan programlar
+geliе÷tirmek iц╖in gereken baе÷lд╠k dosyalarд╠nд╠ ve kitaplд╠klarд╠ iц╖erir.
 
-%description devel -l uk
-Це пакет для програмування з GraphicsMagick. В╕н м╕стить хедери та
-б╕бл╕отеки для використання в програмах, що використовують код або API
+%description devel -l uk.UTF-8
+п╕п╣ п©п╟п╨п╣я┌ п╢п╩я▐ п©я─п╬пЁя─п╟п╪я┐п╡п╟п╫п╫я▐ п╥ GraphicsMagick. п▓я√п╫ п╪я√я│я┌п╦я┌я▄ я┘п╣п╢п╣я─п╦ я┌п╟
+п╠я√п╠п╩я√п╬я┌п╣п╨п╦ п╢п╩я▐ п╡п╦п╨п╬я─п╦я│я┌п╟п╫п╫я▐ п╡ п©я─п╬пЁя─п╟п╪п╟я┘, я┴п╬ п╡п╦п╨п╬я─п╦я│я┌п╬п╡я┐я▌я┌я▄ п╨п╬п╢ п╟п╠п╬ API
 GraphicsMagick.
 
 %package static
 Summary:	GraphicsMagick static libraries
-Summary(pl):	Biblioteki statyczne GraphicsMagick
-Summary(pt_BR):	Bibliotecas estАticas para desenvolvimento com libGraphicsMagick
-Summary(ru):	Статические библиотеки для программирования с GraphicsMagick
-Summary(uk):	Статичн╕ б╕бл╕отеки для програмування з GraphicsMagick
+Summary(pl.UTF-8):   Biblioteki statyczne GraphicsMagick
+Summary(pt_BR.UTF-8):   Bibliotecas estц║ticas para desenvolvimento com libGraphicsMagick
+Summary(ru.UTF-8):   п║я┌п╟я┌п╦я┤п╣я│п╨п╦п╣ п╠п╦п╠п╩п╦п╬я┌п╣п╨п╦ п╢п╩я▐ п©я─п╬пЁя─п╟п╪п╪п╦я─п╬п╡п╟п╫п╦я▐ я│ GraphicsMagick
+Summary(uk.UTF-8):   п║я┌п╟я┌п╦я┤п╫я√ п╠я√п╠п╩я√п╬я┌п╣п╨п╦ п╢п╩я▐ п©я─п╬пЁя─п╟п╪я┐п╡п╟п╫п╫я▐ п╥ GraphicsMagick
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 GraphicsMagick static libraries.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Biblioteki statyczne GraphicsMagick.
 
-%description static -l pt_BR
-Bibliotecas estАticas para desenvolvimento com libGraphicsMagick.
+%description static -l pt_BR.UTF-8
+Bibliotecas estц║ticas para desenvolvimento com libGraphicsMagick.
 
-%description static -l ru
-Это отдельный пакет со статическими библиотеками, которые больше не
-входят в GraphicsMagick-devel.
+%description static -l ru.UTF-8
+п╜я┌п╬ п╬я┌п╢п╣п╩я▄п╫я▀п╧ п©п╟п╨п╣я┌ я│п╬ я│я┌п╟я┌п╦я┤п╣я│п╨п╦п╪п╦ п╠п╦п╠п╩п╦п╬я┌п╣п╨п╟п╪п╦, п╨п╬я┌п╬я─я▀п╣ п╠п╬п╩я▄я┬п╣ п╫п╣
+п╡я┘п╬п╢я▐я┌ п╡ GraphicsMagick-devel.
 
-%description static -l uk
-Це окремий пакет з╕ статичними б╕бл╕отеками, як╕ б╕льше не входять до
-складу GraphicsMagick-devel.
+%description static -l uk.UTF-8
+п╕п╣ п╬п╨я─п╣п╪п╦п╧ п©п╟п╨п╣я┌ п╥я√ я│я┌п╟я┌п╦я┤п╫п╦п╪п╦ п╠я√п╠п╩я√п╬я┌п╣п╨п╟п╪п╦, я▐п╨я√ п╠я√п╩я▄я┬п╣ п╫п╣ п╡я┘п╬п╢я▐я┌я▄ п╢п╬
+я│п╨п╩п╟п╢я┐ GraphicsMagick-devel.
 
 %package coder-dot
 Summary:	Coder module for GraphViz DOT files
-Summary(pl):	ModuЁ kodera dla plikСw GraphViz DOT
+Summary(pl.UTF-8):   Moduе┌ kodera dla plikцЁw GraphViz DOT
 Group:		X11/Applications/Graphics
 Requires:	%{name} = %{version}-%{release}
 
 %description coder-dot
 Coder module for GraphViz DOT files.
 
-%description coder-dot -l pl
-ModuЁ kodera dla plikСw GraphViz DOT.
+%description coder-dot -l pl.UTF-8
+Moduе┌ kodera dla plikцЁw GraphViz DOT.
 
 %package coder-fpx
 Summary:	Coder module for FlashPIX (FPX) files
-Summary(pl):	ModuЁ kodera dla plikСw FlashPIX (FPX)
+Summary(pl.UTF-8):   Moduе┌ kodera dla plikцЁw FlashPIX (FPX)
 Group:		X11/Applications/Graphics
 Requires:	%{name} = %{version}-%{release}
 
 %description coder-fpx
 Coder module for FlashPIX (FPX) files.
 
-%description coder-fpx -l pl
-ModuЁ kodera dla plikСw FlashPIX (FPX).
+%description coder-fpx -l pl.UTF-8
+Moduе┌ kodera dla plikцЁw FlashPIX (FPX).
 
 %package coder-jbig
 Summary:	Coder module for JBIG files
-Summary(pl):	ModuЁ kodera dla plikСw JBIG
+Summary(pl.UTF-8):   Moduе┌ kodera dla plikцЁw JBIG
 Group:		X11/Applications/Graphics
 Requires:	%{name} = %{version}-%{release}
 
 %description coder-jbig
 Coder module for JBIG files.
 
-%description coder-jbig -l pl
-ModuЁ kodera dla plikСw JBIG.
+%description coder-jbig -l pl.UTF-8
+Moduе┌ kodera dla plikцЁw JBIG.
 
 %package coder-jpeg
 Summary:	Coder module for JPEG files
-Summary(pl):	ModuЁ kodera dla plikСw JPEG
+Summary(pl.UTF-8):   Moduе┌ kodera dla plikцЁw JPEG
 Group:		X11/Applications/Graphics
 Requires:	%{name} = %{version}-%{release}
 
 %description coder-jpeg
 Coder module for JPEG files.
 
-%description coder-jpeg -l pl
-ModuЁ kodera dla plikСw JPEG.
+%description coder-jpeg -l pl.UTF-8
+Moduе┌ kodera dla plikцЁw JPEG.
 
 %package coder-jpeg2
 Summary:	Coder module for JPEG-2000 (JP2/JPC) files using JasPer library
-Summary(pl):	ModuЁ kodera dla plikСw JPEG-2000 (JP2/JPC) u©ywaj╠cy biblioteki JasPer
+Summary(pl.UTF-8):   Moduе┌ kodera dla plikцЁw JPEG-2000 (JP2/JPC) uе╪ywajд┘cy biblioteki JasPer
 Group:		X11/Applications/Graphics
 Requires:	%{name} = %{version}-%{release}
 
 %description coder-jpeg2
 Coder module for JPEG-2000 (JP2/JPC) files using JasPer library.
 
-%description coder-jpeg2 -l pl
-ModuЁ kodera dla plikСw JPEG-2000 (JP2/JPC) u©ywajacy biblioteki
+%description coder-jpeg2 -l pl.UTF-8
+Moduе┌ kodera dla plikцЁw JPEG-2000 (JP2/JPC) uе╪ywajacy biblioteki
 JasPer.
 
 %package coder-miff
 Summary:	Coder module for MIFF files
-Summary(pl):	ModuЁ kodera dla plikСw MIFF
+Summary(pl.UTF-8):   Moduе┌ kodera dla plikцЁw MIFF
 Group:		X11/Applications/Graphics
 Requires:	%{name} = %{version}-%{release}
 
 %description coder-miff
 Coder module for MIFF files.
 
-%description coder-miff -l pl
-ModuЁ kodera dla plikСw MIFF.
+%description coder-miff -l pl.UTF-8
+Moduе┌ kodera dla plikцЁw MIFF.
 
 %package coder-mpr
 Summary:	Coder module for GraphicsMagick MPR and MSL files
-Summary(pl):	ModuЁ kodera dla plikСw MPR i MSL GraphicsMagick
+Summary(pl.UTF-8):   Moduе┌ kodera dla plikцЁw MPR i MSL GraphicsMagick
 Group:		X11/Applications/Graphics
 Requires:	%{name} = %{version}-%{release}
 
@@ -300,100 +300,100 @@ Requires:	%{name} = %{version}-%{release}
 Coder module for Magick Persistent Registry (MPR) and Magick Scripting
 Language (MSL) files.
 
-%description coder-mpr -l pl
-ModuЁ kodera dla plikСw Magick Persistent Registry (MPR) i Magick
+%description coder-mpr -l pl.UTF-8
+Moduе┌ kodera dla plikцЁw Magick Persistent Registry (MPR) i Magick
 Scripting Language (MSL).
 
 %package coder-pdf
 Summary:	Coder module for PDF files
-Summary(pl):	ModuЁ kodera dla plikСw PDF
+Summary(pl.UTF-8):   Moduе┌ kodera dla plikцЁw PDF
 Group:		X11/Applications/Graphics
 Requires:	%{name} = %{version}-%{release}
 
 %description coder-pdf
 Coder module for PDF files.
 
-%description coder-pdf -l pl
-ModuЁ kodera dla plikСw PDF.
+%description coder-pdf -l pl.UTF-8
+Moduе┌ kodera dla plikцЁw PDF.
 
 %package coder-png
 Summary:	Coder module for PNG files
-Summary(pl):	Modul kodera dla plikСw PNG
+Summary(pl.UTF-8):   Modul kodera dla plikцЁw PNG
 Group:		X11/Applications/Graphics
 Requires:	%{name} = %{version}-%{release}
 
 %description coder-png
 Coder module for PNG files.
 
-%description coder-png -l pl
-ModuЁ kodera dla plikСw PNG.
+%description coder-png -l pl.UTF-8
+Moduе┌ kodera dla plikцЁw PNG.
 
 %package coder-ps2
 Summary:	Coder module for Postscript Level II & III (PS2/PS3) files
-Summary(pl):	ModuЁ kodera dla plikСw Postscript Level II i III (PS2/PS3)
+Summary(pl.UTF-8):   Moduе┌ kodera dla plikцЁw Postscript Level II i III (PS2/PS3)
 Group:		X11/Applications/Graphics
 Requires:	%{name} = %{version}-%{release}
 
 %description coder-ps2
 Coder module for Postscript Level II & III (PS2/PS3) files.
 
-%description coder-ps2 -l pl
-ModuЁ kodera dla plikСw Postscript Level II i III (PS2/PS3).
+%description coder-ps2 -l pl.UTF-8
+Moduе┌ kodera dla plikцЁw Postscript Level II i III (PS2/PS3).
 
 %package coder-svg
 Summary:	Coder module for SVG (Scalable Vector Graphics) files
-Summary(pl):	ModuЁ kodera dla plikСw SVG (Scalable Vector Graphics)
+Summary(pl.UTF-8):   Moduе┌ kodera dla plikцЁw SVG (Scalable Vector Graphics)
 Group:		X11/Applications/Graphics
 Requires:	%{name} = %{version}-%{release}
 
 %description coder-svg
 Coder module for SVG (Scalable Vector Graphics) files.
 
-%description coder-svg -l pl
-ModuЁ kodera dla plikСw SVG (Scalable Vector Graphics).
+%description coder-svg -l pl.UTF-8
+Moduе┌ kodera dla plikцЁw SVG (Scalable Vector Graphics).
 
 %package coder-tiff
 Summary:	Coder module for TIFF files
-Summary(pl):	ModuЁ kodera dla plikСw TIFF
+Summary(pl.UTF-8):   Moduе┌ kodera dla plikцЁw TIFF
 Group:		X11/Applications/Graphics
 Requires:	%{name} = %{version}-%{release}
 
 %description coder-tiff
 Coder module for TIFF files.
 
-%description coder-tiff -l pl
-ModuЁ kodera dla plikСw TIFF.
+%description coder-tiff -l pl.UTF-8
+Moduе┌ kodera dla plikцЁw TIFF.
 
 %package coder-url
 Summary:	Coder module for retrieving files via URL
-Summary(pl):	ModuЁ kodera ╤ci╠gaj╠cy pliki o podanym URL
+Summary(pl.UTF-8):   Moduе┌ kodera е⌡ciд┘gajд┘cy pliki o podanym URL
 Group:		X11/Applications/Graphics
 Requires:	%{name} = %{version}-%{release}
 
 %description coder-url
 Coder module for retrieving files via URL.
 
-%description coder-url -l pl
-ModuЁ kodera ╤ci╠gaj╠cy pliki o podanym URL.
+%description coder-url -l pl.UTF-8
+Moduе┌ kodera е⌡ciд┘gajд┘cy pliki o podanym URL.
 
 %package coder-wmf
 Summary:	Coder module for WMF files
-Summary(pl):	ModuЁ kodera dla plikСw WMF
+Summary(pl.UTF-8):   Moduе┌ kodera dla plikцЁw WMF
 Group:		X11/Applications/Graphics
 Requires:	%{name} = %{version}-%{release}
 
 %description coder-wmf
 Coder module for WMF files.
 
-%description coder-wmf -l pl
-ModuЁ kodera dla plikСw WMF.
+%description coder-wmf -l pl.UTF-8
+Moduе┌ kodera dla plikцЁw WMF.
 
 %package c++
 Summary:	GraphicsMagick Magick++ library
-Summary(pl):	Biblioteka Magick++
-Summary(pt_BR):	Bibliotecas dinБmicas do GraphicsMagick
-Summary(ru):	Библиотека Magick++ (C++ интерфейс для GraphicsMagick'а)
-Summary(uk):	Б╕бл╕отека Magick++ (╕нтерфейс C++ для GraphicsMagick)
+Summary(pl.UTF-8):   Biblioteka Magick++
+Summary(pt_BR.UTF-8):   Bibliotecas dinц╒micas do GraphicsMagick
+Summary(ru.UTF-8):   п▒п╦п╠п╩п╦п╬я┌п╣п╨п╟ Magick++ (C++ п╦п╫я┌п╣я─я└п╣п╧я│ п╢п╩я▐ GraphicsMagick'п╟)
+Summary(uk.UTF-8):   п▒я√п╠п╩я√п╬я┌п╣п╨п╟ Magick++ (я√п╫я┌п╣я─я└п╣п╧я│ C++ п╢п╩я▐ GraphicsMagick)
 Group:		X11/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
 
@@ -404,31 +404,31 @@ GraphicsMagick graphics manipulation library.
 Install GraphicsMagick-c++ if you want to use any applications that
 use Magick++.
 
-%description c++ -l pl
-Pakiet zawiera bibliotekЙ Magick++ - interfejs w C++ do biblioteki
-GraphicsMagick. Jest potrzebny do uruchamiania programСw
-korzystaj╠cych z Magick++.
+%description c++ -l pl.UTF-8
+Pakiet zawiera bibliotekд≥ Magick++ - interfejs w C++ do biblioteki
+GraphicsMagick. Jest potrzebny do uruchamiania programцЁw
+korzystajд┘cych z Magick++.
 
-%description c++ -l pt_BR
-Bibliotecas dinБmicas C++ do GraphicsMagick.
+%description c++ -l pt_BR.UTF-8
+Bibliotecas dinц╒micas C++ do GraphicsMagick.
 
-%description c++ -l ru
-Magick++ -- объектно-ориентированная библиотека, представляющая из
-себя C++ API для GraphicsMagick (библиотеки для просмотра,
-конвертирования и обработки изображений).
+%description c++ -l ru.UTF-8
+Magick++ -- п╬п╠я┼п╣п╨я┌п╫п╬-п╬я─п╦п╣п╫я┌п╦я─п╬п╡п╟п╫п╫п╟я▐ п╠п╦п╠п╩п╦п╬я┌п╣п╨п╟, п©я─п╣п╢я│я┌п╟п╡п╩я▐я▌я┴п╟я▐ п╦п╥
+я│п╣п╠я▐ C++ API п╢п╩я▐ GraphicsMagick (п╠п╦п╠п╩п╦п╬я┌п╣п╨п╦ п╢п╩я▐ п©я─п╬я│п╪п╬я┌я─п╟,
+п╨п╬п╫п╡п╣я─я┌п╦я─п╬п╡п╟п╫п╦я▐ п╦ п╬п╠я─п╟п╠п╬я┌п╨п╦ п╦п╥п╬п╠я─п╟п╤п╣п╫п╦п╧).
 
-%description c++ -l uk
-Magick++ -- об'╓кто-ор╕╓нтована б╕бл╕отека, що явля╓ собою C++ API для
-GraphicsMagick (б╕бл╕отеки для перегляду, конвертування та обробки
-зображень).
+%description c++ -l uk.UTF-8
+Magick++ -- п╬п╠'я■п╨я┌п╬-п╬я─я√я■п╫я┌п╬п╡п╟п╫п╟ п╠я√п╠п╩я√п╬я┌п╣п╨п╟, я┴п╬ я▐п╡п╩я▐я■ я│п╬п╠п╬я▌ C++ API п╢п╩я▐
+GraphicsMagick (п╠я√п╠п╩я√п╬я┌п╣п╨п╦ п╢п╩я▐ п©п╣я─п╣пЁп╩я▐п╢я┐, п╨п╬п╫п╡п╣я─я┌я┐п╡п╟п╫п╫я▐ я┌п╟ п╬п╠я─п╬п╠п╨п╦
+п╥п╬п╠я─п╟п╤п╣п╫я▄).
 
 %package c++-devel
 Summary:	C++ bindings for the GraphicsMagick library
-Summary(es):	Biblioteca estАtica y archivos de inclusiСn para desarrollo con libGraphicsMagick++
-Summary(pl):	Pliki nagЁСwkowe z interfejsem C++ do GraphicsMagick
-Summary(pt_BR):	Biblioteca e arquivos de inclusЦo para desenvolvimento com libGraphicsMagick++
-Summary(ru):	Хедеры и библиотеки для разработок с использованием Magick++ (C++ интерфейс для GraphicsMagick'а)
-Summary(uk):	Хедери та б╕бл╕отеки для розробок з використанням Magick++ (╕нтерфейсу C++ для GraphicsMagick)
+Summary(es.UTF-8):   Biblioteca estц║tica y archivos de inclusiцЁn para desarrollo con libGraphicsMagick++
+Summary(pl.UTF-8):   Pliki nagе┌цЁwkowe z interfejsem C++ do GraphicsMagick
+Summary(pt_BR.UTF-8):   Biblioteca e arquivos de inclusцёo para desenvolvimento com libGraphicsMagick++
+Summary(ru.UTF-8):   п╔п╣п╢п╣я─я▀ п╦ п╠п╦п╠п╩п╦п╬я┌п╣п╨п╦ п╢п╩я▐ я─п╟п╥я─п╟п╠п╬я┌п╬п╨ я│ п╦я│п©п╬п╩я▄п╥п╬п╡п╟п╫п╦п╣п╪ Magick++ (C++ п╦п╫я┌п╣я─я└п╣п╧я│ п╢п╩я▐ GraphicsMagick'п╟)
+Summary(uk.UTF-8):   п╔п╣п╢п╣я─п╦ я┌п╟ п╠я√п╠п╩я√п╬я┌п╣п╨п╦ п╢п╩я▐ я─п╬п╥я─п╬п╠п╬п╨ п╥ п╡п╦п╨п╬я─п╦я│я┌п╟п╫п╫я▐п╪ Magick++ (я√п╫я┌п╣я─я└п╣п╧я│я┐ C++ п╢п╩я▐ GraphicsMagick)
 Group:		X11/Development/Libraries
 Requires:	%{name}-c++ = %{version}-%{release}
 Requires:	%{name}-devel = %{version}-%{release}
@@ -446,38 +446,38 @@ if you just want to use GraphicsMagick, or if you want to
 develop/compile applications using the GraphicsMagick C interface,
 however.
 
-%description c++-devel -l es
+%description c++-devel -l es.UTF-8
 Este es el paquete de desarrollo GraphicsMagick. Incluye las
-bibliotecas estАticas y los archivos de inclusiСn para el desarrollo
-de sus propias aplicaciones que hacen uso del cСdigo GraphicsMagick
+bibliotecas estц║ticas y los archivos de inclusiцЁn para el desarrollo
+de sus propias aplicaciones que hacen uso del cцЁdigo GraphicsMagick
 y/el APIs.
 
-%description c++-devel -l pl
-Pakiet zawiera pliki nagЁСwkowe potrzebne do kompilowania programСw
-korzystaj╠cych z Magick++.
+%description c++-devel -l pl.UTF-8
+Pakiet zawiera pliki nagе┌цЁwkowe potrzebne do kompilowania programцЁw
+korzystajд┘cych z Magick++.
 
-%description c++-devel -l pt_BR
-Este И o pacote de desenvolvimento libGraphicsMagick++. Inclui as
-bibliotecas e os arquivos de inclusЦo para o desenvolvimento de suas
-prСprias aplicaГУes C++ que fazem uso do cСdigo GraphicsMagick e/ou
+%description c++-devel -l pt_BR.UTF-8
+Este ц╘ o pacote de desenvolvimento libGraphicsMagick++. Inclui as
+bibliotecas e os arquivos de inclusцёo para o desenvolvimento de suas
+prцЁprias aplicaц╖ц╣es C++ que fazem uso do cцЁdigo GraphicsMagick e/ou
 APIs.
 
-%description c++-devel -l ru
-Это пакет разработчика для программирования с GraphicsMagick. Он
-включает хедеры и библиотеки для использования в программах, которые
-используют код или API Magick++ (C++ интерфейс для GraphicsMagick'а).
+%description c++-devel -l ru.UTF-8
+п╜я┌п╬ п©п╟п╨п╣я┌ я─п╟п╥я─п╟п╠п╬я┌я┤п╦п╨п╟ п╢п╩я▐ п©я─п╬пЁя─п╟п╪п╪п╦я─п╬п╡п╟п╫п╦я▐ я│ GraphicsMagick. п·п╫
+п╡п╨п╩я▌я┤п╟п╣я┌ я┘п╣п╢п╣я─я▀ п╦ п╠п╦п╠п╩п╦п╬я┌п╣п╨п╦ п╢п╩я▐ п╦я│п©п╬п╩я▄п╥п╬п╡п╟п╫п╦я▐ п╡ п©я─п╬пЁя─п╟п╪п╪п╟я┘, п╨п╬я┌п╬я─я▀п╣
+п╦я│п©п╬п╩я▄п╥я┐я▌я┌ п╨п╬п╢ п╦п╩п╦ API Magick++ (C++ п╦п╫я┌п╣я─я└п╣п╧я│ п╢п╩я▐ GraphicsMagick'п╟).
 
-%description c++-devel -l uk
-Це пакет для програмування з GraphicsMagick. В╕н м╕стить хедери та
-б╕бл╕отеки для використання в програмах, що використовують код або API
-Magick++ (╕нтерфейс C++ для GraphicsMagick).
+%description c++-devel -l uk.UTF-8
+п╕п╣ п©п╟п╨п╣я┌ п╢п╩я▐ п©я─п╬пЁя─п╟п╪я┐п╡п╟п╫п╫я▐ п╥ GraphicsMagick. п▓я√п╫ п╪я√я│я┌п╦я┌я▄ я┘п╣п╢п╣я─п╦ я┌п╟
+п╠я√п╠п╩я√п╬я┌п╣п╨п╦ п╢п╩я▐ п╡п╦п╨п╬я─п╦я│я┌п╟п╫п╫я▐ п╡ п©я─п╬пЁя─п╟п╪п╟я┘, я┴п╬ п╡п╦п╨п╬я─п╦я│я┌п╬п╡я┐я▌я┌я▄ п╨п╬п╢ п╟п╠п╬ API
+Magick++ (я√п╫я┌п╣я─я└п╣п╧я│ C++ п╢п╩я▐ GraphicsMagick).
 
 %package c++-static
 Summary:	C++ bindings for the GraphicsMagick - static library
-Summary(pl):	Interfejs C++ do GraphicsMagick - biblioteka statyczna
-Summary(pt_BR):	Bibliotecas estАticas para desenvolvimento com libGraphicsMagick
-Summary(ru):	Статические библиотеки C++ для программирования с GraphicsMagick
-Summary(uk):	Статичн╕ б╕бл╕отеки C++ для програмування з GraphicsMagick
+Summary(pl.UTF-8):   Interfejs C++ do GraphicsMagick - biblioteka statyczna
+Summary(pt_BR.UTF-8):   Bibliotecas estц║ticas para desenvolvimento com libGraphicsMagick
+Summary(ru.UTF-8):   п║я┌п╟я┌п╦я┤п╣я│п╨п╦п╣ п╠п╦п╠п╩п╦п╬я┌п╣п╨п╦ C++ п╢п╩я▐ п©я─п╬пЁя─п╟п╪п╪п╦я─п╬п╡п╟п╫п╦я▐ я│ GraphicsMagick
+Summary(uk.UTF-8):   п║я┌п╟я┌п╦я┤п╫я√ п╠я√п╠п╩я√п╬я┌п╣п╨п╦ C++ п╢п╩я▐ п©я─п╬пЁя─п╟п╪я┐п╡п╟п╫п╫я▐ п╥ GraphicsMagick
 Group:		X11/Development/Libraries
 Requires:	%{name}-c++-devel = %{version}-%{release}
 Requires:	%{name}-devel = %{version}-%{release}
@@ -485,26 +485,26 @@ Requires:	%{name}-devel = %{version}-%{release}
 %description c++-static
 C++ bindings for the GraphicsMagick - static library.
 
-%description c++-static -l pl
+%description c++-static -l pl.UTF-8
 Biblioteka Magick++ w wersji statycznej.
 
-%description c++-static -l pt_BR
-Bibliotecas estАticas para desenvolvimento com libGraphicsMagick++.
+%description c++-static -l pt_BR.UTF-8
+Bibliotecas estц║ticas para desenvolvimento com libGraphicsMagick++.
 
-%description c++-static -l ru
-Это отдельный пакет со статическими библиотеками, которые больше не
-входят в GraphicsMagick-c++-devel.
+%description c++-static -l ru.UTF-8
+п╜я┌п╬ п╬я┌п╢п╣п╩я▄п╫я▀п╧ п©п╟п╨п╣я┌ я│п╬ я│я┌п╟я┌п╦я┤п╣я│п╨п╦п╪п╦ п╠п╦п╠п╩п╦п╬я┌п╣п╨п╟п╪п╦, п╨п╬я┌п╬я─я▀п╣ п╠п╬п╩я▄я┬п╣ п╫п╣
+п╡я┘п╬п╢я▐я┌ п╡ GraphicsMagick-c++-devel.
 
-%description c++-static -l uk
-Це окремий пакет з╕ статичними б╕бл╕отеками, як╕ б╕льше не входять до
-складу GraphicsMagick-c++-devel.
+%description c++-static -l uk.UTF-8
+п╕п╣ п╬п╨я─п╣п╪п╦п╧ п©п╟п╨п╣я┌ п╥я√ я│я┌п╟я┌п╦я┤п╫п╦п╪п╦ п╠я√п╠п╩я√п╬я┌п╣п╨п╟п╪п╦, я▐п╨я√ п╠я√п╩я▄я┬п╣ п╫п╣ п╡я┘п╬п╢я▐я┌я▄ п╢п╬
+я│п╨п╩п╟п╢я┐ GraphicsMagick-c++-devel.
 
 %package perl
 Summary:	Libraries and modules for access to GraphicsMagick from Perl
-Summary(pl):	Biblioteki i moduЁy Perla dla GraphicsMagick
-Summary(pt_BR):	MСdulo perl para uso com o GraphicsMagick
-Summary(ru):	Библиотеки и модули для доступа к GraphicsMagick из perl
-Summary(uk):	Б╕бл╕отеки та модул╕ для доступу до GraphicsMagick з Perl
+Summary(pl.UTF-8):   Biblioteki i moduе┌y Perla dla GraphicsMagick
+Summary(pt_BR.UTF-8):   MцЁdulo perl para uso com o GraphicsMagick
+Summary(ru.UTF-8):   п▒п╦п╠п╩п╦п╬я┌п╣п╨п╦ п╦ п╪п╬п╢я┐п╩п╦ п╢п╩я▐ п╢п╬я│я┌я┐п©п╟ п╨ GraphicsMagick п╦п╥ perl
+Summary(uk.UTF-8):   п▒я√п╠п╩я√п╬я┌п╣п╨п╦ я┌п╟ п╪п╬п╢я┐п╩я√ п╢п╩я▐ п╢п╬я│я┌я┐п©я┐ п╢п╬ GraphicsMagick п╥ Perl
 Group:		Development/Languages/Perl
 Requires:	%{name} = %{version}-%{release}
 Requires:	%{name}-libs = %{version}-%{release}
@@ -514,31 +514,31 @@ This is the GraphicsMagick Perl support package. It perl modules and
 support files for access to GraphicsMagick library from perl without
 unuseful forking or such.
 
-%description perl -l pl
-Biblioteki i moduЁy umo©liwiaj╠ce korzystanie z GraphicsMagick z
+%description perl -l pl.UTF-8
+Biblioteki i moduе┌y umoе╪liwiajд┘ce korzystanie z GraphicsMagick z
 poziomu Perla.
 
-%description perl -l pt_BR
-Este pacote fornece um mСdulo perl para acessar funГУes do
+%description perl -l pt_BR.UTF-8
+Este pacote fornece um mцЁdulo perl para acessar funц╖ц╣es do
 GraphicsMagick em scripts Perl.
 
-%description perl -l ru
-Это пакет GraphicsMagick для поддержки perl. Он включает модули perl и
-вспомогательные файлы для доступа к библиотеке GraphicsMagick из Perl.
+%description perl -l ru.UTF-8
+п╜я┌п╬ п©п╟п╨п╣я┌ GraphicsMagick п╢п╩я▐ п©п╬п╢п╢п╣я─п╤п╨п╦ perl. п·п╫ п╡п╨п╩я▌я┤п╟п╣я┌ п╪п╬п╢я┐п╩п╦ perl п╦
+п╡я│п©п╬п╪п╬пЁп╟я┌п╣п╩я▄п╫я▀п╣ я└п╟п╧п╩я▀ п╢п╩я▐ п╢п╬я│я┌я┐п©п╟ п╨ п╠п╦п╠п╩п╦п╬я┌п╣п╨п╣ GraphicsMagick п╦п╥ Perl.
 
-%description perl -l uk
-Це пакет GraphicsMagick для п╕дтримки Perl. В╕н м╕стить модул╕ Perl та
-додатков╕ файли для доступу до б╕бл╕отеки GraphicsMagick з Perl.
+%description perl -l uk.UTF-8
+п╕п╣ п©п╟п╨п╣я┌ GraphicsMagick п╢п╩я▐ п©я√п╢я┌я─п╦п╪п╨п╦ Perl. п▓я√п╫ п╪я√я│я┌п╦я┌я▄ п╪п╬п╢я┐п╩я√ Perl я┌п╟
+п╢п╬п╢п╟я┌п╨п╬п╡я√ я└п╟п╧п╩п╦ п╢п╩я▐ п╢п╬я│я┌я┐п©я┐ п╢п╬ п╠я√п╠п╩я√п╬я┌п╣п╨п╦ GraphicsMagick п╥ Perl.
 
 %package doc
 Summary:	GraphicsMagick documentation
-Summary(pl):	Dokumentacja do GraphicsMagick
+Summary(pl.UTF-8):   Dokumentacja do GraphicsMagick
 Group:		Documentation
 
 %description doc
 Documentation for GraphicsMagick.
 
-%description doc -l pl
+%description doc -l pl.UTF-8
 Dokumentacja do GraphicsMagick.
 
 %prep
