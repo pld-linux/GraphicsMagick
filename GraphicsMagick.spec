@@ -28,6 +28,7 @@ Source0:	ftp://ftp.graphicsmagick.org/pub/GraphicsMagick/%{name}-%{version}.tar.
 Patch0:		%{name}-libpath.patch
 Patch1:		%{name}-system-libltdl.patch
 Patch2:		%{name}-link.patch
+Patch3:		%{name}-png.patch
 URL:		http://www.graphicsmagick.org/
 BuildRequires:	autoconf >= 2.59-9
 BuildRequires:	automake >= 1:1.8
@@ -546,6 +547,7 @@ Dokumentacja do GraphicsMagick.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 find PerlMagick scripts www -type f -exec perl -pi -e 's=!%{_prefix}/local/bin/perl=!%{__perl}=' {} \;
 
