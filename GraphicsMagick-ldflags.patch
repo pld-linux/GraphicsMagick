@@ -1,0 +1,21 @@
+--- GraphicsMagick-1.1.7/configure.ac~	2007-02-25 17:55:08.000000000 +0100
++++ GraphicsMagick-1.1.7/configure.ac	2007-02-25 18:10:49.000000000 +0100
+@@ -2713,7 +2713,17 @@
+ 
+ MAGICK_API_CFLAGS=$CFLAGS
+ MAGICK_API_CPPFLAGS=`echo $MAGICK_API_CPPFLAGS | sed -e 's/  */ /g'`
+-MAGICK_API_LDFLAGS="-L$LIB_DIR $LDFLAGS"
++MAGICK_API_LDFLAGS="-L$LIB_DIR"
++for flag in $LDFLAGS
++do
++  case "$flag" in
++    -s|-Wl,-s|--strip-all|-Wl,--strip-all|-Wl,--as-needed)
++      ;;
++    *)
++      MAGICK_API_LDFLAGS="$MAGICK_API_LDFLAGS $flag"
++      ;;
++  esac
++done
+ MAGICK_API_LIBS="-lGraphicsMagick $MAGICK_DEP_LIBS"
+ 
+ AC_SUBST(MAGICK_API_CFLAGS)

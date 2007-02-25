@@ -29,6 +29,7 @@ Patch0:		%{name}-libpath.patch
 Patch1:		%{name}-system-libltdl.patch
 Patch2:		%{name}-link.patch
 Patch3:		%{name}-png.patch
+Patch4:		%{name}-ldflags.patch
 URL:		http://www.graphicsmagick.org/
 BuildRequires:	autoconf >= 2.59-9
 BuildRequires:	automake >= 1:1.8
@@ -58,8 +59,6 @@ Requires:	%{name}-libs = %{version}-%{release}
 Obsoletes:	GraphicsMagick-coder-dps
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-# we don't want "-s" here, because it would be added to `GraphicsMagick*-config --ldflags`
-%define		filterout_ld	(-Wl,)?-s (-Wl,)?--strip-all
 %define		modulesdir	%{_libdir}/GraphicsMagick-%{version}/modules-Q%{QuantumDepth}
 
 %description
@@ -548,6 +547,7 @@ Dokumentacja do GraphicsMagick.
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
+%patch4 -p1
 
 find PerlMagick scripts www -type f -exec perl -pi -e 's=!%{_prefix}/local/bin/perl=!%{__perl}=' {} \;
 
