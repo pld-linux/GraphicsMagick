@@ -20,7 +20,7 @@ Summary(tr.UTF-8):	X altında resim gösterme, çevirme ve değişiklik yapma
 Summary(uk.UTF-8):	Перегляд, конвертування та обробка зображень під X Window
 Name:		GraphicsMagick
 Version:	1.1.7
-Release:	4
+Release:	5
 License:	Apache-like
 Group:		X11/Applications/Graphics
 Source0:	ftp://ftp.graphicsmagick.org/pub/GraphicsMagick/%{name}-%{version}.tar.bz2
