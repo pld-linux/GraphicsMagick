@@ -19,12 +19,12 @@ Summary(ru.UTF-8):	Просмотр, конвертирование, обраб�
 Summary(tr.UTF-8):	X altında resim gösterme, çevirme ve değişiklik yapma
 Summary(uk.UTF-8):	Перегляд, конвертування та обробка зображень під X Window
 Name:		GraphicsMagick
-Version:	1.1.7
-Release:	5
+Version:	1.1.8
+Release:	1
 License:	Apache-like
 Group:		X11/Applications/Graphics
 Source0:	ftp://ftp.graphicsmagick.org/pub/GraphicsMagick/%{name}-%{version}.tar.bz2
-# Source0-md5:	f75d830ca623bf10385b3ad62c48437a
+# Source0-md5:	dbfea361f02d63fa0956185d7794e845
 Patch0:		%{name}-libpath.patch
 Patch1:		%{name}-system-libltdl.patch
 Patch2:		%{name}-link.patch
@@ -37,15 +37,15 @@ BuildRequires:	bzip2-devel >= 1.0.1
 BuildRequires:	expat-devel >= 1.95.7
 BuildRequires:	freetype-devel >= 2.0.2-2
 %{?with_gs:BuildRequires:	ghostscript-devel}
-%{?with_jasper:BuildRequires:	jasper-devel >= 1.700.5}
-BuildRequires:	jbigkit-devel
-BuildRequires:	lcms-devel
+%{?with_jasper:BuildRequires:	jasper-devel >= 1.900.1}
+BuildRequires:	jbigkit-devel >= 1.6
+BuildRequires:	lcms-devel >= 1.16
 %{?with_fpx:BuildRequires:	libfpx-devel >= 1.2.0.4-3}
 BuildRequires:	libjpeg-devel
 BuildRequires:	libltdl-devel
-BuildRequires:	libpng-devel >= 1.0.8
+BuildRequires:	libpng-devel >= 1.2.18
 BuildRequires:	libstdc++-devel
-BuildRequires:	libtiff-devel
+BuildRequires:	libtiff-devel >= 3.8.2
 BuildRequires:	libtool >= 2:1.5
 BuildRequires:	libwmf-devel >= 2:0.2.2
 BuildRequires:	libxml2-devel >= 2.0
