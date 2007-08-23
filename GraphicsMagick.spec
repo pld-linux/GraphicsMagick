@@ -87,10 +87,10 @@ nombreux formats différents.
 
 %description -l pl.UTF-8
 GraphicsMagick jest narzędziem do manipulacji, konwersji i
-wyświetlania. W skład pakietu wchodzą zarówno narzędzia X Window jak i
-do używania z linii poleceń umożliwiające edycję plików graficznych.
-Narzędzia z pakietu GraphicsMagick potrafią obsłużyć wiele różnych
-formatów graficznych.
+wyświetlania plików graficznych. W skład pakietu wchodzą zarówno
+narzędzia X Window jak i do używania z linii poleceń umożliwiające
+edycję grafiki. Narzędzia z pakietu GraphicsMagick potrafią obsłużyć
+wiele różnych formatów graficznych.
 
 %description -l pt_BR.UTF-8
 GraphicsMagick é uma ferramenta para manipular, converter e exibir
