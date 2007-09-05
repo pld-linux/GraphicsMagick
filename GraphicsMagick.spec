@@ -57,7 +57,7 @@ BuildRequires:	rpmbuild(macros) >= 1.315
 # only checked for, but only supplied scripts/txt2html is used
 #BuildRequires:	txt2html
 Requires:	%{name}-libs = %{version}-%{release}
-Obsoletes:	GraphicsMagick-coder-dps
+#Obsoletes:	GraphicsMagick-coder-dps
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		modulesdir	%{_libdir}/GraphicsMagick-%{version}/modules-Q%{QuantumDepth}
@@ -217,20 +217,6 @@ Bibliotecas estáticas para desenvolvimento com libGraphicsMagick.
 %description static -l uk.UTF-8
 Це окремий пакет зі статичними бібліотеками, які більше не входять до
 складу GraphicsMagick-devel.
-
-%package coder-dps
-Summary:	Coder module for Postscript files using DPS extension
-Summary(pl):	Modu� kodera dla plik�w Postscript u�ywaj�cy rozszerzenia DPS
-Group:		X11/Applications/Graphics
-Requires:	%{name} = %{version}-%{release}
-
-%description coder-dps
-Coder module for Postcript files using DPS (Display PostScript)
-extension.
-
-%description coder-dps -l pl
-Modu� kodera dla plik�w Postscript u�ywaj�cy rozszerzenia DPS (Display
-PostScript).
 
 %package coder-dot
 Summary:	Coder module for GraphViz DOT files
@@ -812,12 +798,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %{_libdir}/libGraphicsMagick.a
 %{_libdir}/libGraphicsMagickWand.a
-
-%files coder-dps
-%defattr(644,root,root,755)
-# R: XFree86-DPS (libdps.so)
-%attr(755,root,root) %{modulesdir}/coders/dps.so
-%{modulesdir}/coders/dps.la
 
 %if %{with fpx}
 %files coder-fpx
