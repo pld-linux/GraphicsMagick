@@ -31,14 +31,16 @@ Patch2:		%{name}-link.patch
 Patch3:		%{name}-png.patch
 Patch4:		%{name}-ldflags.patch
 URL:		http://www.graphicsmagick.org/
+BuildRequires:	XFree86-devel
+BuildRequires:	XFree86-DPS-devel
 BuildRequires:	autoconf >= 2.59-9
 BuildRequires:	automake >= 1:1.8
 BuildRequires:	bzip2-devel >= 1.0.1
 BuildRequires:	expat-devel >= 1.95.7
 BuildRequires:	freetype-devel >= 2.0.2-2
 %{?with_gs:BuildRequires:	ghostscript-devel}
-%{?with_jasper:BuildRequires:	jasper-devel >= 1.900.1}
-BuildRequires:	jbigkit-devel >= 1.6
+#%{?with_jasper:BuildRequires:	jasper-devel >= 1.900.1}
+#BuildRequires:	jbigkit-devel >= 1.6
 BuildRequires:	lcms-devel >= 1.16
 %{?with_fpx:BuildRequires:	libfpx-devel >= 1.2.0.4-3}
 BuildRequires:	libjpeg-devel
@@ -52,7 +54,6 @@ BuildRequires:	libxml2-devel >= 2.0
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	rpmbuild(macros) >= 1.315
-BuildRequires:	xorg-lib-libXext-devel
 # only checked for, but only supplied scripts/txt2html is used
 #BuildRequires:	txt2html
 Requires:	%{name}-libs = %{version}-%{release}
@@ -216,6 +217,20 @@ Bibliotecas estáticas para desenvolvimento com libGraphicsMagick.
 %description static -l uk.UTF-8
 Це окремий пакет зі статичними бібліотеками, які більше не входять до
 складу GraphicsMagick-devel.
+
+%package coder-dps
+Summary:	Coder module for Postscript files using DPS extension
+Summary(pl):	Modu� kodera dla plik�w Postscript u�ywaj�cy rozszerzenia DPS
+Group:		X11/Applications/Graphics
+Requires:	%{name} = %{version}-%{release}
+
+%description coder-dps
+Coder module for Postcript files using DPS (Display PostScript)
+extension.
+
+%description coder-dps -l pl
+Modu� kodera dla plik�w Postscript u�ywaj�cy rozszerzenia DPS (Display
+PostScript).
 
 %package coder-dot
 Summary:	Coder module for GraphViz DOT files
@@ -563,7 +578,6 @@ echo -e '\nAC_DEFUN([AC_LIBTOOL_TAGS],[])' >> acinclude.m4
 	--enable-fast-install \
 	--enable-shared \
 	--disable-ltdl-install \
-	--without-dps \
 	--with%{!?with_fpx:out}-fpx \
 	--with%{!?with_gs:out}-gslib \
 	--with%{!?with_jasper:out}-jp2 \
@@ -798,6 +812,12 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %{_libdir}/libGraphicsMagick.a
 %{_libdir}/libGraphicsMagickWand.a
+
+%files coder-dps
+%defattr(644,root,root,755)
+# R: XFree86-DPS (libdps.so)
+%attr(755,root,root) %{modulesdir}/coders/dps.so
+%{modulesdir}/coders/dps.la
 
 %if %{with fpx}
 %files coder-fpx
