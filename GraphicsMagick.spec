@@ -57,7 +57,7 @@ BuildRequires:	rpmbuild(macros) >= 1.315
 # only checked for, but only supplied scripts/txt2html is used
 #BuildRequires:	txt2html
 Requires:	%{name}-libs = %{version}-%{release}
-#Obsoletes:	GraphicsMagick-coder-dps
+Obsoletes:	GraphicsMagick-coder-dps
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		modulesdir	%{_libdir}/GraphicsMagick-%{version}/modules-Q%{QuantumDepth}
