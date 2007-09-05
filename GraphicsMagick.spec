@@ -39,8 +39,8 @@ BuildRequires:	bzip2-devel >= 1.0.1
 BuildRequires:	expat-devel >= 1.95.7
 BuildRequires:	freetype-devel >= 2.0.2-2
 %{?with_gs:BuildRequires:	ghostscript-devel}
-#%{?with_jasper:BuildRequires:	jasper-devel >= 1.900.1}
-#BuildRequires:	jbigkit-devel >= 1.6
+%{?with_jasper:BuildRequires:	jasper-devel}
+BuildRequires:	jbigkit-devel
 BuildRequires:	lcms-devel >= 1.16
 %{?with_fpx:BuildRequires:	libfpx-devel >= 1.2.0.4-3}
 BuildRequires:	libjpeg-devel
