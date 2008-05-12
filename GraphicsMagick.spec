@@ -19,12 +19,12 @@ Summary(ru.UTF-8):	Просмотр, конвертирование, обраб�
 Summary(tr.UTF-8):	X altında resim gösterme, çevirme ve değişiklik yapma
 Summary(uk.UTF-8):	Перегляд, конвертування та обробка зображень під X Window
 Name:		GraphicsMagick
-Version:	1.1.10
-Release:	2
-License:	Apache-like
+Version:	1.2.1
+Release:	0.1
+License:	MIT
 Group:		X11/Applications/Graphics
-Source0:	ftp://ftp.graphicsmagick.org/pub/GraphicsMagick/%{name}-%{version}.tar.bz2
-# Source0-md5:	fb8a223ad7d7369970166b2266cb41e4
+Source0:	http://dl.sourceforge.net/graphicsmagick/%{name}-%{version}.tar.bz2
+# Source0-md5:	a3f31cb58d2900495d5125d7b7453491
 Patch0:		%{name}-libpath.patch
 Patch1:		%{name}-system-libltdl.patch
 Patch2:		%{name}-link.patch
@@ -543,22 +543,22 @@ Dokumentacja do GraphicsMagick.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
-%patch2 -p1
-%patch3 -p1
-%patch4 -p1
+#%patch0 -p1
+#%patch1 -p1
+#%patch2 -p1
+#%patch3 -p1
+#%patch4 -p1
 
 find PerlMagick scripts www -type f -exec perl -pi -e 's=!%{_prefix}/local/bin/perl=!%{__perl}=' {} \;
 
 # don't require libtool 1.6
-echo -e '\nAC_DEFUN([AC_LIBTOOL_TAGS],[])' >> acinclude.m4
+#echo -e '\nAC_DEFUN([AC_LIBTOOL_TAGS],[])' >> acinclude.m4
 
 %build
-%{__libtoolize}
-%{__aclocal}
-%{__autoconf}
-%{__automake}
+#%{__libtoolize}
+#%{__aclocal}
+#%{__autoconf}
+#%{__automake}
 %configure \
 	--enable-fast-install \
 	--enable-shared \
