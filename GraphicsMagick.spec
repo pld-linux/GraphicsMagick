@@ -772,7 +772,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files libs
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog Copyright.txt NEWS README.txt TODO.txt
+%doc AUTHORS.txt ChangeLog Copyright.txt NEWS.txt README.txt TODO.txt
 %attr(755,root,root) %{_libdir}/libGraphicsMagick.so.*.*.*
 %attr(755,root,root) %{_libdir}/libGraphicsMagickWand.so.*.*.*
 
