@@ -545,7 +545,7 @@ Dokumentacja do GraphicsMagick.
 %setup -q
 %patch0 -p1
 #%patch1 -p1
-#%patch2 -p1
+%patch2 -p1
 #%patch3 -p1
 #%patch4 -p1
 
@@ -555,10 +555,10 @@ find PerlMagick scripts www -type f -exec perl -pi -e 's=!%{_prefix}/local/bin/p
 #echo -e '\nAC_DEFUN([AC_LIBTOOL_TAGS],[])' >> acinclude.m4
 
 %build
-#%{__libtoolize}
-#%{__aclocal}
-#%{__autoconf}
-#%{__automake}
+%{__libtoolize}
+%{__aclocal}
+%{__autoconf}
+%{__automake}
 %configure \
 	--enable-fast-install \
 	--enable-shared \
