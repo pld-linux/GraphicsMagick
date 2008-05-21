@@ -25,7 +25,8 @@ License:	MIT
 Group:		X11/Applications/Graphics
 Source0:	http://dl.sourceforge.net/graphicsmagick/%{name}-%{version}.tar.bz2
 # Source0-md5:	a3f31cb58d2900495d5125d7b7453491
-Patch0:		%{name}-libpath.patch
+Patch0:		gf.patch
+#Patch0:		%{name}-libpath.patch
 Patch1:		%{name}-system-libltdl.patch
 Patch2:		%{name}-link.patch
 Patch3:		%{name}-png.patch
@@ -543,9 +544,9 @@ Dokumentacja do GraphicsMagick.
 
 %prep
 %setup -q
-%patch0 -p1
+#%patch0 -p1
 #%patch1 -p1
-%patch2 -p1
+#%patch2 -p1
 #%patch3 -p1
 #%patch4 -p1
 
@@ -555,10 +556,10 @@ find PerlMagick scripts www -type f -exec perl -pi -e 's=!%{_prefix}/local/bin/p
 #echo -e '\nAC_DEFUN([AC_LIBTOOL_TAGS],[])' >> acinclude.m4
 
 %build
-%{__libtoolize}
-%{__aclocal}
-%{__autoconf}
-%{__automake}
+#%{__libtoolize}
+#%{__aclocal}
+#%{__autoconf}
+#%{__automake}
 %configure \
 	--enable-fast-install \
 	--enable-shared \
@@ -579,13 +580,19 @@ find PerlMagick scripts www -type f -exec perl -pi -e 's=!%{_prefix}/local/bin/p
 
 %{__make}
 
+cd PerlMagick
+perl Makefile.PL
+make OTHERLDFLAGS="-L../magick/.libs/"
+cd ..
+
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-perl-%{version}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
-	pkgdocdir=%{_docdir}/%{name}-devel-%{version}
+	pkgdocdir=%{_docdir}/%{name}-devel-%{version} \
+	OTHERLDFLAGS="-L../magick/.libs/"
 
 install PerlMagick/demo/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-perl-%{version}
 rm -f $RPM_BUILD_ROOT%{modulesdir}/{coders,filters}/*.a
