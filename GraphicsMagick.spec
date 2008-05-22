@@ -25,12 +25,6 @@ License:	MIT
 Group:		X11/Applications/Graphics
 Source0:	http://dl.sourceforge.net/graphicsmagick/%{name}-%{version}.tar.bz2
 # Source0-md5:	a3f31cb58d2900495d5125d7b7453491
-Patch0:		gf.patch
-#Patch0:		%{name}-libpath.patch
-Patch1:		%{name}-system-libltdl.patch
-Patch2:		%{name}-link.patch
-Patch3:		%{name}-png.patch
-Patch4:		%{name}-ldflags.patch
 URL:		http://www.graphicsmagick.org/
 BuildRequires:	autoconf >= 2.59-9
 BuildRequires:	automake >= 1:1.8
@@ -544,22 +538,10 @@ Dokumentacja do GraphicsMagick.
 
 %prep
 %setup -q
-#%patch0 -p1
-#%patch1 -p1
-#%patch2 -p1
-#%patch3 -p1
-#%patch4 -p1
 
 find PerlMagick scripts www -type f -exec perl -pi -e 's=!%{_prefix}/local/bin/perl=!%{__perl}=' {} \;
 
-# don't require libtool 1.6
-#echo -e '\nAC_DEFUN([AC_LIBTOOL_TAGS],[])' >> acinclude.m4
-
 %build
-#%{__libtoolize}
-#%{__aclocal}
-#%{__autoconf}
-#%{__automake}
 %configure \
 	--enable-fast-install \
 	--enable-shared \
