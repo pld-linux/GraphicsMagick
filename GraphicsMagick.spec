@@ -19,12 +19,12 @@ Summary(ru.UTF-8):	Просмотр, конвертирование, обраб�
 Summary(tr.UTF-8):	X altında resim gösterme, çevirme ve değişiklik yapma
 Summary(uk.UTF-8):	Перегляд, конвертування та обробка зображень під X Window
 Name:		GraphicsMagick
-Version:	1.2.1
+Version:	1.2.2
 Release:	0.1
 License:	MIT
 Group:		X11/Applications/Graphics
 Source0:	http://dl.sourceforge.net/graphicsmagick/%{name}-%{version}.tar.bz2
-# Source0-md5:	a3f31cb58d2900495d5125d7b7453491
+# Source0-md5:	615d6bafb19f2e296153934a051832a7
 URL:		http://www.graphicsmagick.org/
 BuildRequires:	autoconf >= 2.59-9
 BuildRequires:	automake >= 1:1.8
@@ -596,6 +596,9 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libdir}/GraphicsMagick-%{version}
 %dir %{_libdir}/GraphicsMagick-%{version}/config
 %{_libdir}/GraphicsMagick-%{version}/config/*.mgk
+%attr(755,root,root) %ghost %{_libdir}/libGraphicsMagick++.so.2
+%attr(755,root,root) %ghost %{_libdir}/libGraphicsMagick.so.2
+%attr(755,root,root) %ghost %{_libdir}/libGraphicsMagickWand.so.1
 %dir %{modulesdir}
 %dir %{modulesdir}/coders
 %dir %{modulesdir}/filters
@@ -767,7 +770,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%doc %{_docdir}/%{name}-devel-%{version}
+%doc %{_docdir}/%{name}
 %attr(755,root,root) %{_bindir}/GraphicsMagick-config
 %attr(755,root,root) %{_bindir}/GraphicsMagickWand-config
 %attr(755,root,root) %{_libdir}/libGraphicsMagick.so
