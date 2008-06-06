@@ -19,12 +19,12 @@ Summary(ru.UTF-8):	Просмотр, конвертирование, обраб�
 Summary(tr.UTF-8):	X altında resim gösterme, çevirme ve değişiklik yapma
 Summary(uk.UTF-8):	Перегляд, конвертування та обробка зображень під X Window
 Name:		GraphicsMagick
-Version:	1.2.2
+Version:	1.2.3
 Release:	1
 License:	MIT
 Group:		X11/Applications/Graphics
 Source0:	http://dl.sourceforge.net/graphicsmagick/%{name}-%{version}.tar.bz2
-# Source0-md5:	615d6bafb19f2e296153934a051832a7
+# Source0-md5:	6326520b005f76f6c7eae26409c9dea0
 URL:		http://www.graphicsmagick.org/
 BuildRequires:	autoconf >= 2.59-9
 BuildRequires:	automake >= 1:1.8
