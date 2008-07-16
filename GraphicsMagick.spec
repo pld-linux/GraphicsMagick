@@ -19,15 +19,18 @@ Summary(ru.UTF-8):	Просмотр, конвертирование, обраб�
 Summary(tr.UTF-8):	X altında resim gösterme, çevirme ve değişiklik yapma
 Summary(uk.UTF-8):	Перегляд, конвертування та обробка зображень під X Window
 Name:		GraphicsMagick
-Version:	1.2.3
-Release:	2
+Version:	1.2.4
+Release:	1
 License:	MIT
 Group:		X11/Applications/Graphics
-Source0:	http://dl.sourceforge.net/graphicsmagick/%{name}-%{version}.tar.bz2
-# Source0-md5:	6326520b005f76f6c7eae26409c9dea0
+Source0:	http://dl.sourceforge.net/graphicsmagick/%{name}-%{version}.tar.lzma
+# Source0-md5:	abb32425c2a52f983cc3d73aa06c072c
+Patch0:		%{name}-libpath.patch
+Patch1:		%{name}-link.patch
+Patch2:		%{name}-ldflags.patch
 URL:		http://www.graphicsmagick.org/
-BuildRequires:	autoconf >= 2.59-9
-BuildRequires:	automake >= 1:1.8
+BuildRequires:	autoconf >= 2.61
+BuildRequires:	automake >= 1:1.10.1
 BuildRequires:	bzip2-devel >= 1.0.1
 BuildRequires:	expat-devel >= 1.95.7
 BuildRequires:	freetype-devel >= 2.0.2-2
@@ -41,7 +44,7 @@ BuildRequires:	libltdl-devel
 BuildRequires:	libpng-devel >= 1.2.18
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtiff-devel >= 3.8.2
-BuildRequires:	libtool >= 2:1.5
+BuildRequires:	libtool >= 2:2.2
 BuildRequires:	libwmf-devel >= 2:0.2.2
 BuildRequires:	libxml2-devel >= 2.0
 BuildRequires:	perl-devel >= 1:5.8.0
@@ -537,11 +540,19 @@ Documentation for GraphicsMagick.
 Dokumentacja do GraphicsMagick.
 
 %prep
-%setup -q
+%setup -q -c -T
+lzma -dc %{SOURCE0} | tar xf - -C ..
+%patch0 -p1
+%patch1 -p1
+%patch2 -p1
 
 find PerlMagick scripts www -type f -exec perl -pi -e 's=!%{_prefix}/local/bin/perl=!%{__perl}=' {} \;
 
 %build
+%{__libtoolize}
+%{__aclocal}
+%{__autoconf}
+%{__automake}
 %configure \
 	--enable-fast-install \
 	--enable-shared \
@@ -562,19 +573,13 @@ find PerlMagick scripts www -type f -exec perl -pi -e 's=!%{_prefix}/local/bin/p
 
 %{__make}
 
-cd PerlMagick
-perl Makefile.PL
-make OTHERLDFLAGS="-L../magick/.libs/"
-cd ..
-
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-perl-%{version}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
-	pkgdocdir=%{_docdir}/%{name}-devel-%{version} \
-	OTHERLDFLAGS="-L../magick/.libs/"
+	pkgdocdir=%{_docdir}/%{name}-devel-%{version}
 
 install PerlMagick/demo/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-perl-%{version}
 rm -f $RPM_BUILD_ROOT%{modulesdir}/{coders,filters}/*.a
@@ -596,9 +601,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libdir}/GraphicsMagick-%{version}
 %dir %{_libdir}/GraphicsMagick-%{version}/config
 %{_libdir}/GraphicsMagick-%{version}/config/*.mgk
-%attr(755,root,root) %ghost %{_libdir}/libGraphicsMagick++.so.2
-%attr(755,root,root) %ghost %{_libdir}/libGraphicsMagick.so.2
-%attr(755,root,root) %ghost %{_libdir}/libGraphicsMagickWand.so.1
 %dir %{modulesdir}
 %dir %{modulesdir}/coders
 %dir %{modulesdir}/filters
@@ -766,7 +768,9 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS.txt ChangeLog Copyright.txt NEWS.txt README.txt TODO.txt
 %attr(755,root,root) %{_libdir}/libGraphicsMagick.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libGraphicsMagick.so.2
 %attr(755,root,root) %{_libdir}/libGraphicsMagickWand.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libGraphicsMagickWand.so.1
 
 %files devel
 %defattr(644,root,root,755)
@@ -881,6 +885,7 @@ rm -rf $RPM_BUILD_ROOT
 %files c++
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libGraphicsMagick++.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libGraphicsMagick++.so.2
 
 %files c++-devel
 %defattr(644,root,root,755)
