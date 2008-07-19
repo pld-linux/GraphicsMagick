@@ -29,7 +29,7 @@ Patch0:		%{name}-libpath.patch
 Patch1:		%{name}-link.patch
 Patch2:		%{name}-ldflags.patch
 URL:		http://www.graphicsmagick.org/
-BuildRequires:	autoconf >= 2.61
+BuildRequires:	autoconf >= 2.62
 BuildRequires:	automake >= 1:1.10.1
 BuildRequires:	bzip2-devel >= 1.0.1
 BuildRequires:	expat-devel >= 1.95.7
