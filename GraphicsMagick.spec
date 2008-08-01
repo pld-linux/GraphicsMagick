@@ -631,6 +631,8 @@ rm -rf $RPM_BUILD_ROOT
 %{modulesdir}/coders/cut.la
 %attr(755,root,root) %{modulesdir}/coders/dcm.so
 %{modulesdir}/coders/dcm.la
+%attr(755,root,root) %{modulesdir}/coders/dcraw.so
+%{modulesdir}/coders/dcraw.la
 %attr(755,root,root) %{modulesdir}/coders/dib.so
 %{modulesdir}/coders/dib.la
 %attr(755,root,root) %{modulesdir}/coders/dpx.so
