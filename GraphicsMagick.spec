@@ -19,12 +19,12 @@ Summary(ru.UTF-8):	Просмотр, конвертирование, обраб�
 Summary(tr.UTF-8):	X altında resim gösterme, çevirme ve değişiklik yapma
 Summary(uk.UTF-8):	Перегляд, конвертування та обробка зображень під X Window
 Name:		GraphicsMagick
-Version:	1.2.5
-Release:	3
+Version:	1.3.2
+Release:	1
 License:	MIT
 Group:		X11/Applications/Graphics
 Source0:	http://dl.sourceforge.net/graphicsmagick/%{name}-%{version}.tar.lzma
-# Source0-md5:	0d5610c394aee04c8e34d272100768e9
+# Source0-md5:	96b8af9136ba566642e830ac3bd7ddf7
 Patch0:		%{name}-libpath.patch
 Patch1:		%{name}-link.patch
 Patch2:		%{name}-ldflags.patch
@@ -768,11 +768,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %files libs
 %defattr(644,root,root,755)
-%doc AUTHORS.txt ChangeLog Copyright.txt NEWS.txt README.txt TODO.txt
+%doc ChangeLog Copyright.txt NEWS.txt README.txt TODO.txt
 %attr(755,root,root) %{_libdir}/libGraphicsMagick.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libGraphicsMagick.so.2
+%attr(755,root,root) %ghost %{_libdir}/libGraphicsMagick.so.3
 %attr(755,root,root) %{_libdir}/libGraphicsMagickWand.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libGraphicsMagickWand.so.1
+%attr(755,root,root) %ghost %{_libdir}/libGraphicsMagickWand.so.2
 
 %files devel
 %defattr(644,root,root,755)
@@ -887,7 +887,7 @@ rm -rf $RPM_BUILD_ROOT
 %files c++
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libGraphicsMagick++.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libGraphicsMagick++.so.2
+%attr(755,root,root) %ghost %{_libdir}/libGraphicsMagick++.so.3
 
 %files c++-devel
 %defattr(644,root,root,755)
