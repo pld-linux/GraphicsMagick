@@ -19,16 +19,15 @@ Summary(ru.UTF-8):	Просмотр, конвертирование, обраб�
 Summary(tr.UTF-8):	X altında resim gösterme, çevirme ve değişiklik yapma
 Summary(uk.UTF-8):	Перегляд, конвертування та обробка зображень під X Window
 Name:		GraphicsMagick
-Version:	1.3.5
-Release:	4
+Version:	1.3.6
+Release:	1
 License:	MIT
 Group:		X11/Applications/Graphics
 Source0:	http://dl.sourceforge.net/graphicsmagick/%{name}-%{version}.tar.lzma
-# Source0-md5:	b29c66a3f6aa8011509cb02d150e3ac5
+# Source0-md5:	b602509eecd926c157047407ea3fb4ad
 Patch0:		%{name}-libpath.patch
 Patch1:		%{name}-link.patch
 Patch2:		%{name}-ldflags.patch
-Patch3:		%{name}-build.patch
 URL:		http://www.graphicsmagick.org/
 BuildRequires:	autoconf >= 2.62
 BuildRequires:	automake >= 1:1.10.1
@@ -546,7 +545,6 @@ lzma -dc %{SOURCE0} | tar xf - -C ..
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
-%patch3 -p1
 
 find PerlMagick scripts www -type f -exec perl -pi -e 's=!%{_prefix}/local/bin/perl=!%{__perl}=' {} \;
 
@@ -623,6 +621,8 @@ rm -rf $RPM_BUILD_ROOT
 %{modulesdir}/coders/avs.la
 %attr(755,root,root) %{modulesdir}/coders/bmp.so
 %{modulesdir}/coders/bmp.la
+%attr(755,root,root) %{modulesdir}/coders/cals.so
+%{modulesdir}/coders/cals.la
 %attr(755,root,root) %{modulesdir}/coders/caption.so
 %{modulesdir}/coders/caption.la
 %attr(755,root,root) %{modulesdir}/coders/cineon.so
@@ -653,10 +653,14 @@ rm -rf $RPM_BUILD_ROOT
 %{modulesdir}/coders/gray.la
 %attr(755,root,root) %{modulesdir}/coders/histogram.so
 %{modulesdir}/coders/histogram.la
+%attr(755,root,root) %{modulesdir}/coders/hrz.so
+%{modulesdir}/coders/hrz.la
 %attr(755,root,root) %{modulesdir}/coders/html.so
 %{modulesdir}/coders/html.la
 %attr(755,root,root) %{modulesdir}/coders/icon.so
 %{modulesdir}/coders/icon.la
+%attr(755,root,root) %{modulesdir}/coders/identity.so
+%{modulesdir}/coders/identity.la
 %attr(755,root,root) %{modulesdir}/coders/label.so
 %{modulesdir}/coders/label.la
 %attr(755,root,root) %{modulesdir}/coders/locale.so
@@ -908,13 +912,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files perl
 %defattr(644,root,root,755)
-%{perl_vendorarch}/Graphics
-%dir %{perl_vendorarch}/auto/Graphics
-%dir %{perl_vendorarch}/auto/Graphics/Magick
-%{perl_vendorarch}/auto/Graphics/Magick/autosplit.ix
-%{perl_vendorarch}/auto/Graphics/Magick/Magick.bs
-%attr(755,root,root) %{perl_vendorarch}/auto/Graphics/Magick/Magick.so
-%{_mandir}/man3/Graphics::Magick.3*
 %{_examplesdir}/%{name}-perl-%{version}
 
 %files doc
