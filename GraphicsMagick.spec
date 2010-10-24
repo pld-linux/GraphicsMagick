@@ -582,9 +582,6 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-perl-%{version}
 	pkgdocdir=%{_docdir}/%{name}-devel-%{version}
 
 install PerlMagick/demo/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-perl-%{version}
-rm -f $RPM_BUILD_ROOT%{modulesdir}/{coders,filters}/*.a
-rm -f $RPM_BUILD_ROOT%{_datadir}/%{name}-%{version}/Copyright.txt
-rm -f $RPM_BUILD_ROOT%{modulesdir}/coders/dps.*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
