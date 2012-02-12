@@ -20,7 +20,7 @@ Summary(tr.UTF-8):	X altında resim gösterme, çevirme ve değişiklik yapma
 Summary(uk.UTF-8):	Перегляд, конвертування та обробка зображень під X Window
 Name:		GraphicsMagick
 Version:	1.3.12
-Release:	5
+Release:	6
 License:	MIT
 Group:		X11/Applications/Graphics
 Source0:	http://dl.sourceforge.net/graphicsmagick/%{name}-%{version}.tar.lzma
@@ -28,6 +28,7 @@ Source0:	http://dl.sourceforge.net/graphicsmagick/%{name}-%{version}.tar.lzma
 Patch0:		%{name}-libpath.patch
 Patch1:		%{name}-link.patch
 Patch2:		%{name}-ldflags.patch
+Patch3:		%{name}-libpng15.patch
 URL:		http://www.graphicsmagick.org/
 BuildRequires:	autoconf >= 2.62
 BuildRequires:	automake >= 1:1.10.1
@@ -545,6 +546,7 @@ lzma -dc %{SOURCE0} | tar xf - -C ..
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p0
 
 find PerlMagick scripts www -type f -exec perl -pi -e 's=!%{_prefix}/local/bin/perl=!%{__perl}=' {} \;
 
