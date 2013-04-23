@@ -19,16 +19,14 @@ Summary(ru.UTF-8):	Просмотр, конвертирование, обраб�
 Summary(tr.UTF-8):	X altında resim gösterme, çevirme ve değişiklik yapma
 Summary(uk.UTF-8):	Перегляд, конвертування та обробка зображень під X Window
 Name:		GraphicsMagick
-Version:	1.3.12
-Release:	6
+Version:	1.3.18
+Release:	1
 License:	MIT
 Group:		X11/Applications/Graphics
-Source0:	http://dl.sourceforge.net/graphicsmagick/%{name}-%{version}.tar.lzma
-# Source0-md5:	1b91c37daa9640440a91a83727607269
-Patch0:		%{name}-libpath.patch
-Patch1:		%{name}-link.patch
-Patch2:		%{name}-ldflags.patch
-Patch3:		%{name}-libpng15.patch
+Source0:	http://dl.sourceforge.net/graphicsmagick/%{name}-%{version}.tar.xz
+# Source0-md5:	45e16e0e9628c167390de837d2144042
+Patch0:		%{name}-link.patch
+Patch1:		%{name}-ldflags.patch
 URL:		http://www.graphicsmagick.org/
 BuildRequires:	autoconf >= 2.62
 BuildRequires:	automake >= 1:1.10.1
@@ -541,12 +539,9 @@ Documentation for GraphicsMagick.
 Dokumentacja do GraphicsMagick.
 
 %prep
-%setup -q -c -T
-lzma -dc %{SOURCE0} | tar xf - -C ..
+%setup -q
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
-%patch3 -p0
 
 find PerlMagick scripts www -type f -exec perl -pi -e 's=!%{_prefix}/local/bin/perl=!%{__perl}=' {} \;
 
@@ -660,12 +655,18 @@ rm -rf $RPM_BUILD_ROOT
 %{modulesdir}/coders/icon.la
 %attr(755,root,root) %{modulesdir}/coders/identity.so
 %{modulesdir}/coders/identity.la
+%attr(755,root,root) %{modulesdir}/coders/info.so
+%{modulesdir}/coders/info.la
+%attr(755,root,root) %{modulesdir}/coders/jnx.so
+%{modulesdir}/coders/jnx.la
 %attr(755,root,root) %{modulesdir}/coders/label.so
 %{modulesdir}/coders/label.la
 %attr(755,root,root) %{modulesdir}/coders/locale.so
 %{modulesdir}/coders/locale.la
 %attr(755,root,root) %{modulesdir}/coders/logo.so
 %{modulesdir}/coders/logo.la
+%attr(755,root,root) %{modulesdir}/coders/mac.so
+%{modulesdir}/coders/mac.la
 %attr(755,root,root) %{modulesdir}/coders/map.so
 %{modulesdir}/coders/map.la
 %attr(755,root,root) %{modulesdir}/coders/mat.so
