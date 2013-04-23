@@ -23,7 +23,7 @@ Version:	1.3.18
 Release:	1
 License:	MIT
 Group:		X11/Applications/Graphics
-Source0:	http://dl.sourceforge.net/graphicsmagick/%{name}-%{version}.tar.xz
+Source0:	http://downloads.sourceforge.net/graphicsmagick/%{name}-%{version}.tar.xz
 # Source0-md5:	45e16e0e9628c167390de837d2144042
 Patch0:		%{name}-link.patch
 Patch1:		%{name}-ldflags.patch
