@@ -3,7 +3,8 @@
 %bcond_without	fpx		# without FlashPIX module (which uses fpx library)
 %bcond_with	gs		# with PostScript support through ghostscript library (warning: breaks jpeg!)
 %bcond_without	jasper		# without JPEG2000 module (which uses jasper library)
-%bcond_without	cxx		# without Magick++
+%bcond_without	cxx		# without Magick++ library
+%bcond_without	gomp		# OpenMP support
 #
 %include	/usr/lib/rpm/macros.perl
 %define		QuantumDepth	16
@@ -28,16 +29,18 @@ Source0:	http://downloads.sourceforge.net/graphicsmagick/%{name}-%{version}.tar.
 Patch0:		%{name}-link.patch
 Patch1:		%{name}-ldflags.patch
 URL:		http://www.graphicsmagick.org/
-BuildRequires:	autoconf >= 2.62
+BuildRequires:	autoconf >= 2.69
 BuildRequires:	automake >= 1:1.10.1
 BuildRequires:	bzip2-devel >= 1.0.1
 BuildRequires:	expat-devel >= 1.95.7
 BuildRequires:	freetype-devel >= 2.0.2-2
+%{?with_gomp:BuildRequires:	gcc >= 6:4.2}
 %{?with_gs:BuildRequires:	ghostscript-devel}
 %{?with_jasper:BuildRequires:	jasper-devel >= 1.900.1}
 BuildRequires:	jbigkit-devel >= 1.6
-BuildRequires:	lcms-devel >= 1.16
+BuildRequires:	lcms2-devel >= 2
 %{?with_fpx:BuildRequires:	libfpx-devel >= 1.2.0.4-3}
+%{?with_gomp:BuildRequires:	libgomp-devel}
 BuildRequires:	libjpeg-devel
 BuildRequires:	libltdl-devel
 BuildRequires:	libpng-devel >= 1.2.18
@@ -50,6 +53,7 @@ BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	rpmbuild(macros) >= 1.315
 BuildRequires:	xorg-lib-libXext-devel
+BuildRequires:	xz-devel
 # only checked for, but only supplied scripts/txt2html is used
 #BuildRequires:	txt2html
 Requires:	%{name}-libs = %{version}-%{release}
@@ -137,9 +141,10 @@ Group:		X11/Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
 Requires:	bzip2-devel
 Requires:	freetype-devel
-Requires:	lcms-devel
+Requires:	lcms2-devel >= 2
 Requires:	libltdl-devel
 Requires:	xorg-lib-libXext-devel
+Requires:	xz-devel
 Requires:	zlib-devel
 
 %description devel
@@ -553,6 +558,7 @@ find PerlMagick scripts www -type f -exec perl -pi -e 's=!%{_prefix}/local/bin/p
 %configure \
 	--enable-fast-install \
 	--enable-shared \
+	%{!?with_gomp:--disable-openmp} \
 	--disable-ltdl-install \
 	--without-dps \
 	--with%{!?with_fpx:out}-fpx \
