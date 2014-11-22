@@ -1,19 +1,25 @@
 --- GraphicsMagick-1.2.4/configure.ac.orig	2008-07-16 22:25:21.838043926 +0200
 +++ GraphicsMagick-1.2.4/configure.ac	2008-07-16 22:29:03.030050630 +0200
-@@ -3355,6 +3355,16 @@
+@@ -3355,6 +3355,22 @@
  MAGICK_API_CFLAGS=$CFLAGS
  MAGICK_API_CPPFLAGS=`echo $MAGICK_API_CPPFLAGS | sed -e 's/  */ /g'`
  MAGICK_API_LDFLAGS="-L$LIB_DIR $LDFLAGS"
-++MAGICK_API_LDFLAGS="-L$LIB_DIR"
++MAGICK_API_LDFLAGS=
++new_LDFLAGS=
 +for flag in $LDFLAGS ; do
 +  case "$flag" in
-+    -s|-Wl,-s|--strip-all|-Wl,--strip-all|-Wl,--as-needed)
++    -L/usr/lib|-L/usr/lib64)
++      ;;
++    -s|-Wl,-s|--strip-all|-Wl,--strip-all|-Wl,--as-needed|-Wl,--no-copy-dt-needed-entries)
++      new_LDFLAGS="$new_LDFLAGS $flag"
 +      ;;
 +    *)
 +      MAGICK_API_LDFLAGS="$MAGICK_API_LDFLAGS $flag"
++      new_LDFLAGS="$new_LDFLAGS $flag"
 +      ;;
 +  esac
 +done
++LDFLAGS="$new_LDFLAGS"
  MAGICK_API_DEP_LIBS="$MAGICK_DEP_LIBS"
  MAGICK_API_LIBS="-lGraphicsMagick $MAGICK_API_DEP_LIBS"
  

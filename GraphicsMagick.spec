@@ -20,12 +20,12 @@ Summary(ru.UTF-8):	Просмотр, конвертирование, обраб�
 Summary(tr.UTF-8):	X altında resim gösterme, çevirme ve değişiklik yapma
 Summary(uk.UTF-8):	Перегляд, конвертування та обробка зображень під X Window
 Name:		GraphicsMagick
-Version:	1.3.18
-Release:	2
+Version:	1.3.20
+Release:	1
 License:	MIT
 Group:		X11/Applications/Graphics
 Source0:	http://downloads.sourceforge.net/graphicsmagick/%{name}-%{version}.tar.xz
-# Source0-md5:	45e16e0e9628c167390de837d2144042
+# Source0-md5:	5bb456e3466026ada6f12cc53c9776dc
 Patch0:		%{name}-link.patch
 Patch1:		%{name}-ldflags.patch
 URL:		http://www.graphicsmagick.org/
@@ -41,19 +41,22 @@ BuildRequires:	jbigkit-devel >= 1.6
 BuildRequires:	lcms2-devel >= 2
 %{?with_fpx:BuildRequires:	libfpx-devel >= 1.2.0.4-3}
 %{?with_gomp:BuildRequires:	libgomp-devel}
-BuildRequires:	libjpeg-devel
+BuildRequires:	libjpeg-devel >= 6b
 BuildRequires:	libltdl-devel
 BuildRequires:	libpng-devel >= 1.2.18
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtiff-devel >= 3.8.2
 BuildRequires:	libtool >= 2:2.2
+BuildRequires:	libwebp-devel
 BuildRequires:	libwmf-devel >= 2:0.2.2
 BuildRequires:	libxml2-devel >= 2.0
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	rpmbuild(macros) >= 1.315
+BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xz-devel
+BuildRequires:	zlib-devel
 # only checked for, but only supplied scripts/txt2html is used
 #BuildRequires:	txt2html
 Requires:	%{name}-libs = %{version}-%{release}
@@ -378,6 +381,18 @@ Coder module for retrieving files via URL.
 %description coder-url -l pl.UTF-8
 Moduł kodera ściągający pliki o podanym URL.
 
+%package coder-webp
+Summary:	Coder module for WebP files
+Summary(pl.UTF-8):	Moduł kodera dla plików WebP
+Group:		X11/Applications/Graphics
+Requires:	%{name} = %{version}-%{release}
+
+%description coder-webp
+Coder module for WebP files.
+
+%description coder-webp -l pl.UTF-8
+Moduł kodera dla plików WebP.
+
 %package coder-wmf
 Summary:	Coder module for WMF files
 Summary(pl.UTF-8):	Moduł kodera dla plików WMF
@@ -559,7 +574,6 @@ find PerlMagick scripts www -type f -exec perl -pi -e 's=!%{_prefix}/local/bin/p
 	--enable-fast-install \
 	--enable-shared \
 	%{!?with_gomp:--disable-openmp} \
-	--disable-ltdl-install \
 	--without-dps \
 	--with%{!?with_fpx:out}-fpx \
 	--with%{!?with_gs:out}-gslib \
@@ -888,6 +902,12 @@ rm -rf $RPM_BUILD_ROOT
 # R: libxml2
 %attr(755,root,root) %{modulesdir}/coders/url.so
 %{modulesdir}/coders/url.la
+
+%files coder-webp
+%defattr(644,root,root,755)
+# R: libwebp
+%attr(755,root,root) %{modulesdir}/coders/webp.so
+%{modulesdir}/coders/webp.la
 
 %files coder-wmf
 %defattr(644,root,root,755)
