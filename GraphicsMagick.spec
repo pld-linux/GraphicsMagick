@@ -4,7 +4,7 @@
 %bcond_with	gs		# with PostScript support through ghostscript library (warning: breaks jpeg!)
 %bcond_without	jasper		# without JPEG2000 module (which uses jasper library)
 %bcond_without	cxx		# without Magick++ library
-%bcond_without	gomp		# OpenMP support
+%bcond_without	openmp		# OpenMP support
 #
 %include	/usr/lib/rpm/macros.perl
 %define		QuantumDepth	16
@@ -34,13 +34,13 @@ BuildRequires:	automake >= 1:1.10.1
 BuildRequires:	bzip2-devel >= 1.0.1
 BuildRequires:	expat-devel >= 1.95.7
 BuildRequires:	freetype-devel >= 2.0.2-2
-%{?with_gomp:BuildRequires:	gcc >= 6:4.2}
+%{?with_openmp:BuildRequires:	gcc >= 6:4.2}
 %{?with_gs:BuildRequires:	ghostscript-devel}
 %{?with_jasper:BuildRequires:	jasper-devel >= 1.900.1}
 BuildRequires:	jbigkit-devel >= 1.6
 BuildRequires:	lcms2-devel >= 2
 %{?with_fpx:BuildRequires:	libfpx-devel >= 1.2.0.4-3}
-%{?with_gomp:BuildRequires:	libgomp-devel}
+%{?with_openmp:BuildRequires:	libgomp-devel}
 BuildRequires:	libjpeg-devel >= 6b
 BuildRequires:	libltdl-devel
 BuildRequires:	libpng-devel >= 1.2.18
@@ -573,7 +573,7 @@ find PerlMagick scripts www -type f -exec perl -pi -e 's=!%{_prefix}/local/bin/p
 %configure \
 	--enable-fast-install \
 	--enable-shared \
-	%{!?with_gomp:--disable-openmp} \
+	%{!?with_openmp:--disable-openmp} \
 	--without-dps \
 	--with%{!?with_fpx:out}-fpx \
 	--with%{!?with_gs:out}-gslib \
