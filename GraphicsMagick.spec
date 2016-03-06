@@ -20,17 +20,17 @@ Summary(ru.UTF-8):	Просмотр, конвертирование, обраб�
 Summary(tr.UTF-8):	X altında resim gösterme, çevirme ve değişiklik yapma
 Summary(uk.UTF-8):	Перегляд, конвертування та обробка зображень під X Window
 Name:		GraphicsMagick
-Version:	1.3.20
-Release:	3
+Version:	1.3.23
+Release:	1
 License:	MIT
 Group:		X11/Applications/Graphics
 Source0:	http://downloads.sourceforge.net/graphicsmagick/%{name}-%{version}.tar.xz
-# Source0-md5:	5bb456e3466026ada6f12cc53c9776dc
+# Source0-md5:	9885ff5d91bc215a0adb3be1185e9777
 Patch0:		%{name}-link.patch
 Patch1:		%{name}-ldflags.patch
 URL:		http://www.graphicsmagick.org/
 BuildRequires:	autoconf >= 2.69
-BuildRequires:	automake >= 1:1.10.1
+BuildRequires:	automake >= 1:1.11
 BuildRequires:	bzip2-devel >= 1.0.1
 BuildRequires:	expat-devel >= 1.95.7
 BuildRequires:	freetype-devel >= 2.0.2-2
@@ -38,12 +38,12 @@ BuildRequires:	freetype-devel >= 2.0.2-2
 %{?with_gs:BuildRequires:	ghostscript-devel}
 %{?with_jasper:BuildRequires:	jasper-devel >= 1.900.1}
 BuildRequires:	jbigkit-devel >= 1.6
-BuildRequires:	lcms2-devel >= 2
+BuildRequires:	lcms2-devel >= 2.0
 %{?with_fpx:BuildRequires:	libfpx-devel >= 1.2.0.4-3}
 %{?with_openmp:BuildRequires:	libgomp-devel}
 BuildRequires:	libjpeg-devel >= 6b
-BuildRequires:	libltdl-devel
-BuildRequires:	libpng-devel >= 1.2.18
+BuildRequires:	libltdl-devel >= 2:2.2
+BuildRequires:	libpng-devel >= 2:1.2.18
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtiff-devel >= 3.8.2
 BuildRequires:	libtool >= 2:2.2
@@ -144,7 +144,7 @@ Group:		X11/Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
 Requires:	bzip2-devel
 Requires:	freetype-devel
-Requires:	lcms2-devel >= 2
+Requires:	lcms2-devel >= 2.0
 Requires:	libltdl-devel
 Requires:	xorg-lib-libXext-devel
 Requires:	xz-devel
@@ -575,11 +575,11 @@ find PerlMagick scripts www -type f -exec perl -pi -e 's=!%{_prefix}/local/bin/p
 	--enable-shared \
 	%{!?with_openmp:--disable-openmp} \
 	--without-dps \
-	--with%{!?with_fpx:out}-fpx \
-	--with%{!?with_gs:out}-gslib \
-	--with%{!?with_jasper:out}-jp2 \
-	--with%{!?with_cxx:out}-magick_plus_plus \
+	--with-fpx%{!?with_fpx:=no} \
 	--with-gs-font-dir=%{_fontsdir}/Type1 \
+	--with-gslib%{!?with_gs:=no} \
+	--with-jp2%{!?with_jasper:=no} \
+	--with-magick_plus_plus%{!?with_cxx:=no} \
 	--with-modules \
 	--with-perl=%{__perl} \
 	--with-perl-options="INSTALLDIRS=vendor" \
@@ -629,8 +629,6 @@ rm -rf $RPM_BUILD_ROOT
 # ========= coders without additional deps
 %attr(755,root,root) %{modulesdir}/coders/art.so
 %{modulesdir}/coders/art.la
-%attr(755,root,root) %{modulesdir}/coders/avi.so
-%{modulesdir}/coders/avi.la
 %attr(755,root,root) %{modulesdir}/coders/avs.so
 %{modulesdir}/coders/avs.la
 %attr(755,root,root) %{modulesdir}/coders/bmp.so
@@ -919,7 +917,7 @@ rm -rf $RPM_BUILD_ROOT
 %files c++
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libGraphicsMagick++.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libGraphicsMagick++.so.3
+%attr(755,root,root) %ghost %{_libdir}/libGraphicsMagick++.so.12
 
 %files c++-devel
 %defattr(644,root,root,755)
