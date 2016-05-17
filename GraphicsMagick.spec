@@ -5,11 +5,11 @@
 %bcond_without	jasper		# without JPEG2000 module (which uses jasper library)
 %bcond_without	cxx		# without Magick++ library
 %bcond_without	openmp		# OpenMP support
-#
-%include	/usr/lib/rpm/macros.perl
-%define		QuantumDepth	16
+
 %define	pdir	Graphics
 %define	pnam	Magick
+%define	QuantumDepth	16
+%include	/usr/lib/rpm/macros.perl
 Summary:	Image display, conversion, and manipulation under X
 Summary(de.UTF-8):	Darstellen, Konvertieren und Bearbeiten von Grafiken unter X
 Summary(es.UTF-8):	Exhibidor, convertidor y manipulador de imágenes bajo X
@@ -21,13 +21,18 @@ Summary(tr.UTF-8):	X altında resim gösterme, çevirme ve değişiklik yapma
 Summary(uk.UTF-8):	Перегляд, конвертування та обробка зображень під X Window
 Name:		GraphicsMagick
 Version:	1.3.23
-Release:	1
+Release:	2
 License:	MIT
 Group:		X11/Applications/Graphics
 Source0:	http://downloads.sourceforge.net/graphicsmagick/%{name}-%{version}.tar.xz
 # Source0-md5:	9885ff5d91bc215a0adb3be1185e9777
 Patch0:		%{name}-link.patch
 Patch1:		%{name}-ldflags.patch
+# https://sourceforge.net/p/graphicsmagick/mailman/message/35072963/
+Patch2:		elegates-safer.patch
+Patch3:		disable-mvg-ext.patch
+Patch4:		disable-tmp-magick-prefix.patch
+Patch5:		image-sanity-check.patch
 URL:		http://www.graphicsmagick.org/
 BuildRequires:	autoconf >= 2.69
 BuildRequires:	automake >= 1:1.11
@@ -562,6 +567,10 @@ Dokumentacja do GraphicsMagick.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
+%patch3 -p1
+%patch4 -p1
+%patch5 -p1
 
 find PerlMagick scripts www -type f -exec perl -pi -e 's=!%{_prefix}/local/bin/perl=!%{__perl}=' {} \;
 
@@ -598,7 +607,7 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-perl-%{version}
 	DESTDIR=$RPM_BUILD_ROOT \
 	pkgdocdir=%{_docdir}/%{name}-devel-%{version}
 
-install PerlMagick/demo/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-perl-%{version}
+cp -p PerlMagick/demo/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-perl-%{version}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
