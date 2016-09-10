@@ -1,9 +1,10 @@
 #
 # Conditional build:
-%bcond_without	fpx		# without FlashPIX module (which uses fpx library)
-%bcond_with	gs		# with PostScript support through ghostscript library (warning: breaks jpeg!)
-%bcond_without	jasper		# without JPEG2000 module (which uses jasper library)
-%bcond_without	cxx		# without Magick++ library
+%bcond_with	broken		# broken/dangerous coders (currently PSD)
+%bcond_without	fpx		# FlashPIX module (which uses fpx library)
+%bcond_with	gs		# PostScript support through ghostscript library (warning: breaks jpeg!)
+%bcond_without	jasper		# JPEG2000 module (which uses jasper library)
+%bcond_without	cxx		# Magick++ library
 %bcond_without	openmp		# OpenMP support
 
 %define	pdir	Graphics
@@ -20,20 +21,14 @@ Summary(ru.UTF-8):	Просмотр, конвертирование, обраб�
 Summary(tr.UTF-8):	X altında resim gösterme, çevirme ve değişiklik yapma
 Summary(uk.UTF-8):	Перегляд, конвертування та обробка зображень під X Window
 Name:		GraphicsMagick
-Version:	1.3.23
-Release:	3
+Version:	1.3.25
+Release:	1
 License:	MIT
 Group:		X11/Applications/Graphics
 Source0:	http://downloads.sourceforge.net/graphicsmagick/%{name}-%{version}.tar.xz
-# Source0-md5:	9885ff5d91bc215a0adb3be1185e9777
+# Source0-md5:	6eed966b22588fb068442319a8aa17f6
 Patch0:		%{name}-link.patch
 Patch1:		%{name}-ldflags.patch
-# https://sourceforge.net/p/graphicsmagick/mailman/message/35072963/
-Patch2:		elegates-safer.patch
-Patch3:		disable-mvg-ext.patch
-Patch4:		disable-tmp-magick-prefix.patch
-Patch5:		image-sanity-check.patch
-Patch6:		CVE-2016-5118.patch
 URL:		http://www.graphicsmagick.org/
 BuildRequires:	autoconf >= 2.69
 BuildRequires:	automake >= 1:1.11
@@ -568,11 +563,6 @@ Dokumentacja do GraphicsMagick.
 %setup -q
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
-%patch3 -p1
-%patch4 -p1
-%patch5 -p1
-%patch6 -p1
 
 find PerlMagick scripts www -type f -exec perl -pi -e 's=!%{_prefix}/local/bin/perl=!%{__perl}=' {} \;
 
@@ -582,6 +572,7 @@ find PerlMagick scripts www -type f -exec perl -pi -e 's=!%{_prefix}/local/bin/p
 %{__autoconf}
 %{__automake}
 %configure \
+	%{?with_broken:--enable-broken-coders} \
 	--enable-fast-install \
 	--enable-shared \
 	%{!?with_openmp:--disable-openmp} \
@@ -738,8 +729,10 @@ rm -rf $RPM_BUILD_ROOT
 %{modulesdir}/coders/pnm.la
 %attr(755,root,root) %{modulesdir}/coders/preview.so
 %{modulesdir}/coders/preview.la
+%if %{with broken}
 %attr(755,root,root) %{modulesdir}/coders/psd.so
 %{modulesdir}/coders/psd.la
+%endif
 %attr(755,root,root) %{modulesdir}/coders/ps.so
 %{modulesdir}/coders/ps.la
 %attr(755,root,root) %{modulesdir}/coders/pwp.so
