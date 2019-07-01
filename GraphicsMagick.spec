@@ -21,12 +21,12 @@ Summary(ru.UTF-8):	Просмотр, конвертирование, обраб�
 Summary(tr.UTF-8):	X altında resim gösterme, çevirme ve değişiklik yapma
 Summary(uk.UTF-8):	Перегляд, конвертування та обробка зображень під X Window
 Name:		GraphicsMagick
-Version:	1.3.28
+Version:	1.3.32
 Release:	1
 License:	MIT
 Group:		X11/Applications/Graphics
 Source0:	http://downloads.sourceforge.net/graphicsmagick/%{name}-%{version}.tar.xz
-# Source0-md5:	aec23df5ad1a5bf8f8e1b392f95eed55
+# Source0-md5:	3eec43b0198e278ba2d12db6ab5b6358
 Patch0:		%{name}-link.patch
 Patch1:		%{name}-ldflags.patch
 URL:		http://www.graphicsmagick.org/
@@ -52,12 +52,14 @@ BuildRequires:	libwebp-devel
 BuildRequires:	libwmf-devel >= 2:0.2.2
 BuildRequires:	libxml2-devel >= 2.0
 BuildRequires:	perl-devel >= 1:5.8.0
+BuildRequires:	pkgconfig
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	rpmbuild(macros) >= 1.315
 BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xz-devel
 BuildRequires:	zlib-devel
+BuildRequires:	zstd-devel
 # only checked for, but only supplied scripts/txt2html is used
 #BuildRequires:	txt2html
 Requires:	%{name}-libs = %{version}-%{release}
@@ -635,6 +637,8 @@ rm -rf $RPM_BUILD_ROOT
 %{modulesdir}/coders/avs.la
 %attr(755,root,root) %{modulesdir}/coders/bmp.so
 %{modulesdir}/coders/bmp.la
+%attr(755,root,root) %{modulesdir}/coders/braille.so
+%{modulesdir}/coders/braille.la
 %attr(755,root,root) %{modulesdir}/coders/cals.so
 %{modulesdir}/coders/cals.la
 %attr(755,root,root) %{modulesdir}/coders/caption.so
