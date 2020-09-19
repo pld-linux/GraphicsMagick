@@ -20,12 +20,12 @@ Summary(ru.UTF-8):	Просмотр, конвертирование, обраб�
 Summary(tr.UTF-8):	X altında resim gösterme, çevirme ve değişiklik yapma
 Summary(uk.UTF-8):	Перегляд, конвертування та обробка зображень під X Window
 Name:		GraphicsMagick
-Version:	1.3.32
+Version:	1.3.35
 Release:	1
 License:	MIT
 Group:		X11/Applications/Graphics
 Source0:	http://downloads.sourceforge.net/graphicsmagick/%{name}-%{version}.tar.xz
-# Source0-md5:	3eec43b0198e278ba2d12db6ab5b6358
+# Source0-md5:	e565b6ce1564d62409b3faa5c747096e
 Patch0:		%{name}-link.patch
 Patch1:		%{name}-ldflags.patch
 URL:		http://www.graphicsmagick.org/
@@ -603,6 +603,9 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-perl-%{version}
 
 cp -p PerlMagick/demo/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-perl-%{version}
 
+# obsoleted by pkg-config
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libGraphicsMagick*.la
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -812,8 +815,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/GraphicsMagickWand-config
 %attr(755,root,root) %{_libdir}/libGraphicsMagick.so
 %attr(755,root,root) %{_libdir}/libGraphicsMagickWand.so
-%{_libdir}/libGraphicsMagick.la
-%{_libdir}/libGraphicsMagickWand.la
 %dir %{_includedir}/GraphicsMagick
 %{_includedir}/GraphicsMagick/magick
 %{_includedir}/GraphicsMagick/wand
@@ -930,7 +931,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/GraphicsMagick++-config
 %attr(755,root,root) %{_libdir}/libGraphicsMagick++.so
-%{_libdir}/libGraphicsMagick++.la
 %{_includedir}/GraphicsMagick/Magick++
 %{_includedir}/GraphicsMagick/Magick++.h
 %{_pkgconfigdir}/GraphicsMagick++.pc
