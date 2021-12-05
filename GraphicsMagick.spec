@@ -20,12 +20,12 @@ Summary(ru.UTF-8):	Просмотр, конвертирование, обраб�
 Summary(tr.UTF-8):	X altında resim gösterme, çevirme ve değişiklik yapma
 Summary(uk.UTF-8):	Перегляд, конвертування та обробка зображень під X Window
 Name:		GraphicsMagick
-Version:	1.3.35
+Version:	1.3.36
 Release:	1
 License:	MIT
 Group:		X11/Applications/Graphics
 Source0:	http://downloads.sourceforge.net/graphicsmagick/%{name}-%{version}.tar.xz
-# Source0-md5:	e565b6ce1564d62409b3faa5c747096e
+# Source0-md5:	3e936b42fd46fb460016f91c1a239e33
 Patch0:		%{name}-link.patch
 Patch1:		%{name}-ldflags.patch
 URL:		http://www.graphicsmagick.org/
@@ -52,8 +52,9 @@ BuildRequires:	libwmf-devel >= 2:0.2.2
 BuildRequires:	libxml2-devel >= 2.0
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	pkgconfig
+BuildRequires:	rpm-build >= 4.6
 BuildRequires:	rpm-perlprov >= 4.1-13
-BuildRequires:	rpmbuild(macros) >= 1.315
+BuildRequires:	rpmbuild(macros) >= 1.745
 BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xz-devel
@@ -62,7 +63,7 @@ BuildRequires:	zstd-devel
 # only checked for, but only supplied scripts/txt2html is used
 #BuildRequires:	txt2html
 Requires:	%{name}-libs = %{version}-%{release}
-Obsoletes:	GraphicsMagick-coder-dps
+Obsoletes:	GraphicsMagick-coder-dps < 1.1.7-2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		modulesdir	%{_libdir}/GraphicsMagick-%{version}/modules-Q%{QuantumDepth}
@@ -553,6 +554,7 @@ GraphicsMagick em scripts Perl.
 Summary:	GraphicsMagick documentation
 Summary(pl.UTF-8):	Dokumentacja do GraphicsMagick
 Group:		Documentation
+BuildArch:	noarch
 
 %description doc
 Documentation for GraphicsMagick.
