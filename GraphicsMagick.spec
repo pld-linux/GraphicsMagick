@@ -1,11 +1,13 @@
+# TODO: package coder-jxl when libjxl >= 0.6.2 (0.7.0?) gets released
 #
 # Conditional build:
-%bcond_with	broken		# broken/dangerous coders (currently PSD)
-%bcond_without	fpx		# FlashPIX module (which uses fpx library)
-%bcond_with	gs		# PostScript support through ghostscript library (warning: breaks jpeg!)
-%bcond_without	jasper		# JPEG2000 module (which uses jasper library)
-%bcond_without	cxx		# Magick++ library
-%bcond_without	openmp		# OpenMP support
+%bcond_with	broken	# broken/dangerous coders (currently PSD)
+%bcond_without	fpx	# FlashPIX module (which uses fpx library)
+%bcond_with	gs	# PostScript support through ghostscript library (warning: breaks jpeg!)
+%bcond_without	jasper	# JPEG2000 module (which uses jasper library)
+%bcond_with	libjxl	# JPEG-XL module (which uses libjxl library)
+%bcond_without	cxx	# Magick++ library
+%bcond_without	openmp	# OpenMP support
 
 %define	pdir	Graphics
 %define	pnam	Magick
@@ -20,12 +22,12 @@ Summary(ru.UTF-8):	Просмотр, конвертирование, обраб�
 Summary(tr.UTF-8):	X altında resim gösterme, çevirme ve değişiklik yapma
 Summary(uk.UTF-8):	Перегляд, конвертування та обробка зображень під X Window
 Name:		GraphicsMagick
-Version:	1.3.36
+Version:	1.3.38
 Release:	1
 License:	MIT
 Group:		X11/Applications/Graphics
-Source0:	http://downloads.sourceforge.net/graphicsmagick/%{name}-%{version}.tar.xz
-# Source0-md5:	3e936b42fd46fb460016f91c1a239e33
+Source0:	https://downloads.sourceforge.net/graphicsmagick/%{name}-%{version}.tar.xz
+# Source0-md5:	9a5978427c3841711f470e15343ca71f
 Patch0:		%{name}-link.patch
 Patch1:		%{name}-ldflags.patch
 URL:		http://www.graphicsmagick.org/
@@ -41,7 +43,9 @@ BuildRequires:	jbigkit-devel >= 1.6
 BuildRequires:	lcms2-devel >= 2.0
 %{?with_fpx:BuildRequires:	libfpx-devel >= 1.2.0.4-3}
 %{?with_openmp:BuildRequires:	libgomp-devel}
+BuildRequires:	libheif-devel
 BuildRequires:	libjpeg-devel >= 6b
+%{?with_libjxl:BuildRequires:	libjxl-devel >= 0.6.2}
 BuildRequires:	libltdl-devel >= 2:2.2
 BuildRequires:	libpng-devel >= 2:1.2.18
 BuildRequires:	libstdc++-devel
@@ -248,6 +252,18 @@ Coder module for FlashPIX (FPX) files.
 
 %description coder-fpx -l pl.UTF-8
 Moduł kodera dla plików FlashPIX (FPX).
+
+%package coder-heif
+Summary:	Coder module for HEIF/HEIC files
+Summary(pl.UTF-8):	Moduł kodera dla plików HEIF/HEIC
+Group:		X11/Applications/Graphics
+Requires:	%{name} = %{version}-%{release}
+
+%description coder-heif
+Coder module for HEIF/HEIC files.
+
+%description coder-heif -l pl.UTF-8
+Moduł kodera dla plików HEIF/HEIC.
 
 %package coder-jbig
 Summary:	Coder module for JBIG files
@@ -584,6 +600,7 @@ find PerlMagick scripts www -type f -exec perl -pi -e 's=!%{_prefix}/local/bin/p
 	--with-gs-font-dir=%{_fontsdir}/Type1 \
 	--with-gslib%{!?with_gs:=no} \
 	--with-jp2%{!?with_jasper:=no} \
+	%{!?with_libjxl:--without-jxl} \
 	--with-magick_plus_plus%{!?with_cxx:=no} \
 	--with-modules \
 	--with-perl=%{__perl} \
@@ -838,6 +855,12 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{modulesdir}/coders/fpx.so
 %{modulesdir}/coders/fpx.la
 %endif
+
+%files coder-heif
+%defattr(644,root,root,755)
+# R: libheif
+%attr(755,root,root) %{modulesdir}/coders/heif.so
+%{modulesdir}/coders/heif.la
 
 %files coder-jbig
 %defattr(644,root,root,755)
