@@ -1,11 +1,10 @@
-# TODO: package coder-jxl when libjxl >= 0.6.2 (0.7.0?) gets released
 #
 # Conditional build:
 %bcond_with	broken	# broken/dangerous coders (currently PSD)
 %bcond_without	fpx	# FlashPIX module (which uses fpx library)
 %bcond_with	gs	# PostScript support through ghostscript library (warning: breaks jpeg!)
 %bcond_without	jasper	# JPEG2000 module (which uses jasper library)
-%bcond_with	libjxl	# JPEG-XL module (which uses libjxl library)
+%bcond_without	libjxl	# JPEG-XL module (which uses libjxl library)
 %bcond_without	cxx	# Magick++ library
 %bcond_without	openmp	# OpenMP support
 
@@ -22,12 +21,12 @@ Summary(ru.UTF-8):	Просмотр, конвертирование, обраб�
 Summary(tr.UTF-8):	X altında resim gösterme, çevirme ve değişiklik yapma
 Summary(uk.UTF-8):	Перегляд, конвертування та обробка зображень під X Window
 Name:		GraphicsMagick
-Version:	1.3.38
+Version:	1.3.40
 Release:	1
 License:	MIT
 Group:		X11/Applications/Graphics
 Source0:	https://downloads.sourceforge.net/graphicsmagick/%{name}-%{version}.tar.xz
-# Source0-md5:	9a5978427c3841711f470e15343ca71f
+# Source0-md5:	eb8395be198a661352dafb98eff5e35c
 Patch0:		%{name}-link.patch
 Patch1:		%{name}-ldflags.patch
 URL:		http://www.graphicsmagick.org/
@@ -41,11 +40,12 @@ BuildRequires:	freetype-devel >= 2.0.2-2
 %{?with_jasper:BuildRequires:	jasper-devel >= 1.900.1}
 BuildRequires:	jbigkit-devel >= 1.6
 BuildRequires:	lcms2-devel >= 2.0
+%{?with_libjxl:BuildRequires:	libbrotli-devel}
 %{?with_fpx:BuildRequires:	libfpx-devel >= 1.2.0.4-3}
 %{?with_openmp:BuildRequires:	libgomp-devel}
 BuildRequires:	libheif-devel
 BuildRequires:	libjpeg-devel >= 6b
-%{?with_libjxl:BuildRequires:	libjxl-devel >= 0.6.2}
+%{?with_libjxl:BuildRequires:	libjxl-devel >= 0.8.0}
 BuildRequires:	libltdl-devel >= 2:2.2
 BuildRequires:	libpng-devel >= 2:1.2.18
 BuildRequires:	libstdc++-devel
@@ -301,6 +301,18 @@ Coder module for JPEG-2000 (JP2/JPC) files using JasPer library.
 %description coder-jpeg2 -l pl.UTF-8
 Moduł kodera dla plików JPEG-2000 (JP2/JPC) używajacy biblioteki
 JasPer.
+
+%package coder-jxl
+Summary:	Coder module for JPEG-XL (JXL) files using libjxl library
+Summary(pl.UTF-8):	Moduł kodera dla plików JPEG-XL (JXL) używający biblioteki libjxl
+Group:		X11/Applications/Graphics
+Requires:	%{name} = %{version}-%{release}
+
+%description coder-jxl
+Coder module for JPEG-XL (JXL) files using libjxl library.
+
+%description coder-jxl -l pl.UTF-8
+Moduł kodera dla plików JPEG-XL (JXL) używajacy biblioteki libjxl.
 
 %package coder-miff
 Summary:	Coder module for MIFF files
@@ -867,6 +879,14 @@ rm -rf $RPM_BUILD_ROOT
 # R: jbigkit (libjbig.so)
 %attr(755,root,root) %{modulesdir}/coders/jbig.so
 %{modulesdir}/coders/jbig.la
+
+%if %{with libjxl}
+%files coder-jxl
+%defattr(644,root,root,755)
+# R: libjxl
+%attr(755,root,root) %{modulesdir}/coders/jxl.so
+%{modulesdir}/coders/jxl.la
+%endif
 
 %files coder-jpeg
 %defattr(644,root,root,755)
