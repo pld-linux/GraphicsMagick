@@ -21,12 +21,12 @@ Summary(ru.UTF-8):	Просмотр, конвертирование, обраб�
 Summary(tr.UTF-8):	X altında resim gösterme, çevirme ve değişiklik yapma
 Summary(uk.UTF-8):	Перегляд, конвертування та обробка зображень під X Window
 Name:		GraphicsMagick
-Version:	1.3.40
-Release:	2
+Version:	1.3.43
+Release:	1
 License:	MIT
 Group:		X11/Applications/Graphics
 Source0:	https://downloads.sourceforge.net/graphicsmagick/%{name}-%{version}.tar.xz
-# Source0-md5:	eb8395be198a661352dafb98eff5e35c
+# Source0-md5:	ffcd558899aff408b9073c2d48539e22
 Patch0:		%{name}-link.patch
 Patch1:		%{name}-ldflags.patch
 URL:		http://www.graphicsmagick.org/
@@ -44,7 +44,7 @@ BuildRequires:	lcms2-devel >= 2.0
 %{?with_fpx:BuildRequires:	libfpx-devel >= 1.2.0.4-3}
 %{?with_openmp:BuildRequires:	libgomp-devel}
 BuildRequires:	libheif-devel
-BuildRequires:	libjpeg-devel >= 6b
+BuildRequires:	libjpeg-turbo-devel >= 3.0
 %{?with_libjxl:BuildRequires:	libjxl-devel >= 0.8.0}
 BuildRequires:	libltdl-devel >= 2:2.2
 BuildRequires:	libpng-devel >= 2:1.2.18
