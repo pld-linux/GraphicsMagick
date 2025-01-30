@@ -21,12 +21,12 @@ Summary(ru.UTF-8):	Просмотр, конвертирование, обраб�
 Summary(tr.UTF-8):	X altında resim gösterme, çevirme ve değişiklik yapma
 Summary(uk.UTF-8):	Перегляд, конвертування та обробка зображень під X Window
 Name:		GraphicsMagick
-Version:	1.3.43
+Version:	1.3.45
 Release:	1
 License:	MIT
 Group:		X11/Applications/Graphics
 Source0:	https://downloads.sourceforge.net/graphicsmagick/%{name}-%{version}.tar.xz
-# Source0-md5:	ffcd558899aff408b9073c2d48539e22
+# Source0-md5:	5eb76e9af7b887a8828fce11aa1e2f1c
 Patch0:		%{name}-link.patch
 Patch1:		%{name}-ldflags.patch
 URL:		http://www.graphicsmagick.org/
