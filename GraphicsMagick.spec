@@ -54,6 +54,7 @@ BuildRequires:	libtool >= 2:2.2
 BuildRequires:	libwebp-devel
 BuildRequires:	libwmf-devel >= 2:0.2.2
 BuildRequires:	libxml2-devel >= 2.0
+BuildRequires:	libzip-devel
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	pkgconfig
 BuildRequires:	rpm-build >= 4.6
@@ -339,6 +340,19 @@ Language (MSL) files.
 %description coder-mpr -l pl.UTF-8
 Moduł kodera dla plików Magick Persistent Registry (MPR) i Magick
 Scripting Language (MSL).
+
+%package coder-ora
+Summary:	Coder module for OpenRaster files
+Summary(pl.UTF-8):	Moduł kodera dla plików OpenRaster
+Group:		X11/Applications/Graphics
+Requires:	%{name} = %{version}-%{release}
+Requires:	%{name}-coder-png = %{version}-%{release}
+
+%description coder-ora
+Coder module for OpenRaster files.
+
+%description coder-ora -l pl.UTF-8
+Moduł kodera dla plików OpenRaster.
 
 %package coder-pdf
 Summary:	Coder module for PDF files
@@ -664,6 +678,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man4/miff.4*
 
 # ========= coders without additional deps
+%attr(755,root,root) %{modulesdir}/coders/aai.so
+%{modulesdir}/coders/aai.la
 %attr(755,root,root) %{modulesdir}/coders/art.so
 %{modulesdir}/coders/art.la
 %attr(755,root,root) %{modulesdir}/coders/avs.so
@@ -915,6 +931,12 @@ rm -rf $RPM_BUILD_ROOT
 %{modulesdir}/coders/mpr.la
 %attr(755,root,root) %{modulesdir}/coders/msl.so
 %{modulesdir}/coders/msl.la
+
+%files coder-ora
+%defattr(644,root,root,755)
+# R: libzip + coder-png
+%attr(755,root,root) %{modulesdir}/coders/ora.so
+%{modulesdir}/coders/ora.la
 
 %files coder-pdf
 %defattr(644,root,root,755)
