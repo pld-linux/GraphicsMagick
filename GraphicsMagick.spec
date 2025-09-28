@@ -851,17 +851,17 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc ChangeLog Copyright.txt NEWS.txt README.txt TODO.txt
 %attr(755,root,root) %{_libdir}/libGraphicsMagick.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libGraphicsMagick.so.3
+%ghost %{_libdir}/libGraphicsMagick.so.3
 %attr(755,root,root) %{_libdir}/libGraphicsMagickWand.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libGraphicsMagickWand.so.2
+%ghost %{_libdir}/libGraphicsMagickWand.so.2
 
 %files devel
 %defattr(644,root,root,755)
 %doc %{_docdir}/%{name}
 %attr(755,root,root) %{_bindir}/GraphicsMagick-config
 %attr(755,root,root) %{_bindir}/GraphicsMagickWand-config
-%attr(755,root,root) %{_libdir}/libGraphicsMagick.so
-%attr(755,root,root) %{_libdir}/libGraphicsMagickWand.so
+%{_libdir}/libGraphicsMagick.so
+%{_libdir}/libGraphicsMagickWand.so
 %dir %{_includedir}/GraphicsMagick
 %{_includedir}/GraphicsMagick/magick
 %{_includedir}/GraphicsMagick/wand
@@ -992,12 +992,12 @@ rm -rf $RPM_BUILD_ROOT
 %files c++
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libGraphicsMagick++.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libGraphicsMagick++.so.12
+%ghost %{_libdir}/libGraphicsMagick++.so.12
 
 %files c++-devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/GraphicsMagick++-config
-%attr(755,root,root) %{_libdir}/libGraphicsMagick++.so
+%{_libdir}/libGraphicsMagick++.so
 %{_includedir}/GraphicsMagick/Magick++
 %{_includedir}/GraphicsMagick/Magick++.h
 %{_pkgconfigdir}/GraphicsMagick++.pc
