@@ -1,11 +1,11 @@
---- GraphicsMagick-1.1.7/configure.ac.orig	2006-03-08 19:14:08.830531000 +0100
-+++ GraphicsMagick-1.1.7/configure.ac	2006-03-08 20:08:46.747388750 +0100
-@@ -1344,7 +1344,7 @@
- if test "$no_x" != 'yes'
- then
+--- GraphicsMagick-1.3.49/configure.ac.orig	2026-10-15 09:06:30.796134261 +0200
++++ GraphicsMagick-1.3.49/configure.ac	2026-10-15 09:06:30.799467594 +0200
+@@ -1991,7 +1991,7 @@
+ AC_PATH_XTRA
+ if test "$no_x" != 'yes' ; then
    LDFLAGS="$LDFLAGS $X_LIBS"
--  LIB_X11="$X_PRE_LIBS -lX11 $X_EXTRA_LIBS"
-+  LIB_X11="-lX11 $X_EXTRA_LIBS"
+-  LIB_X11=`echo $X_PRE_LIBS -lX11 $X_EXTRA_LIBS | sed -e 's/  */ /g'`
++  LIB_X11=`echo -lX11 $X_EXTRA_LIBS | sed -e 's/  */ /g'`
    LIBS="$LIB_X11 $LIBS"
    CPPFLAGS="$CPPFLAGS $X_CFLAGS"
  

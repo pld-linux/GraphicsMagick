@@ -2,7 +2,6 @@
 # Conditional build:
 %bcond_with	broken	# broken/dangerous coders (currently PSD)
 %bcond_without	fpx	# FlashPIX module (which uses fpx library)
-%bcond_with	gs	# PostScript support through ghostscript library (warning: breaks jpeg!)
 %bcond_without	jasper	# JPEG2000 module (which uses jasper library)
 %bcond_without	libjxl	# JPEG-XL module (which uses libjxl library)
 %bcond_without	cxx	# Magick++ library
@@ -21,29 +20,28 @@ Summary(ru.UTF-8):	Просмотр, конвертирование, обраб�
 Summary(tr.UTF-8):	X altında resim gösterme, çevirme ve değişiklik yapma
 Summary(uk.UTF-8):	Перегляд, конвертування та обробка зображень під X Window
 Name:		GraphicsMagick
-Version:	1.3.45
-Release:	6
+Version:	1.3.49
+Release:	1
 License:	MIT
 Group:		X11/Applications/Graphics
 Source0:	https://downloads.sourceforge.net/graphicsmagick/%{name}-%{version}.tar.xz
-# Source0-md5:	5eb76e9af7b887a8828fce11aa1e2f1c
+# Source0-md5:	8658f5d02cd25fd5e0316081805738e1
 Patch0:		%{name}-link.patch
 Patch1:		%{name}-ldflags.patch
 URL:		http://www.graphicsmagick.org/
-BuildRequires:	autoconf >= 2.69
+BuildRequires:	autoconf >= 2.71
 BuildRequires:	automake >= 1:1.11
 BuildRequires:	bzip2-devel >= 1.0.1
 BuildRequires:	expat-devel >= 1.95.7
 BuildRequires:	freetype-devel >= 2.0.2-2
 %{?with_openmp:BuildRequires:	gcc >= 6:4.2}
-%{?with_gs:BuildRequires:	ghostscript-devel}
 %{?with_jasper:BuildRequires:	jasper-devel >= 1.900.1}
 BuildRequires:	jbigkit-devel >= 1.6
 BuildRequires:	lcms2-devel >= 2.0
 %{?with_libjxl:BuildRequires:	libbrotli-devel}
 %{?with_fpx:BuildRequires:	libfpx-devel >= 1.2.0.4-3}
 %{?with_openmp:BuildRequires:	libgomp-devel}
-BuildRequires:	libheif-devel
+BuildRequires:	libheif-devel >= 1.14.0
 BuildRequires:	libjpeg-turbo-devel >= 3.0
 %{?with_libjxl:BuildRequires:	libjxl-devel >= 0.8.0}
 BuildRequires:	libltdl-devel >= 2:2.2
@@ -621,10 +619,8 @@ find PerlMagick scripts www -type f -exec perl -pi -e 's=!%{_prefix}/local/bin/p
 	--enable-fast-install \
 	--enable-shared \
 	%{!?with_openmp:--disable-openmp} \
-	--without-dps \
 	--with-fpx%{!?with_fpx:=no} \
 	--with-gs-font-dir=%{_fontsdir}/Type1 \
-	--with-gslib%{!?with_gs:=no} \
 	--with-jp2%{!?with_jasper:=no} \
 	%{!?with_libjxl:--without-jxl} \
 	--with-magick_plus_plus%{!?with_cxx:=no} \
